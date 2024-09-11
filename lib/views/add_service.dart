@@ -5,20 +5,39 @@ import 'package:taskito/core/components/main_txt_field.dart';
 import 'package:taskito/core/helpers/dimensions.dart';
 import 'package:taskito/core/style/app_colors.dart';
 
-class AddService extends StatelessWidget {
-  AddService({super.key});
+class AddService extends StatefulWidget {
+  const AddService({super.key});
+
+  @override
+  State<AddService> createState() => _AddServiceState();
+}
+
+class _AddServiceState extends State<AddService> {
   TextEditingController jobTitleController = TextEditingController();
+
   TextEditingController priceController = TextEditingController();
+
   TextEditingController descriptionController = TextEditingController();
+
   TextEditingController categoryController = TextEditingController();
+
   TextEditingController paymentController = TextEditingController();
+
   TextEditingController tagsController = TextEditingController();
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  double? price; 
+  String? inputTextPrice;
+
+  List<String> categories = ["Front-end", "Back-end", "Full-Stack", "Graphic design", "App develpoment", "Technical support"];
+  String? selectedCategory;
+
+  List<String> paymentMethods = ["Visa", "Master card", "InstaPay", "Vodafone cash"];
+  String? selectedMethod;
+
   @override
   Widget build(BuildContext context) {
     Dimensions.setDimensions(context);
-
     return Scaffold(
       appBar: AppBar(
           surfaceTintColor: Colors.white,
@@ -50,13 +69,13 @@ class AddService extends StatelessWidget {
                 },
                 child: Text(context.tr("change_language")),
               ),
-              const Text(
-                "Service Details",
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              Text(
+                context.tr("service_details"),
+                style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
-              const Text(
-                "write down those information about your service",
-                style: TextStyle(fontSize: 20),
+              Text(
+                context.tr("service_info"),
+                style: const TextStyle(fontSize: 20),
               ),
               Form(
                 key: formKey,
@@ -66,87 +85,135 @@ class AddService extends StatelessWidget {
                     SizedBox(
                       height: Dimensions.getHeight(0.02),
                     ),
-                    const Text("Job title",
-                        style: TextStyle(
+                    Text(context.tr("job_title"),
+                        style: const TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold)),
                     SizedBox(
                       height: Dimensions.getHeight(0.01),
                     ),
                     MainTxtField(
-                      hintText: "Enter a job title for this service..",
+                      hintText: context.tr("job_title_hint"),
                       controller: jobTitleController,
                       validator: (value) {
                         if (value == null || value.length < 5) {
-                          return "Invalid job title";
+                          return context.tr("invalid_job_title");
                         }
                       },
                     ),
                     SizedBox(
                       height: Dimensions.getHeight(0.02),
                     ),
-                    const Text("Price",
-                        style: TextStyle(
+                    Text(context.tr("price"),
+                        style: const TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold)),
                     SizedBox(
                       height: Dimensions.getHeight(0.01),
                     ),
                     MainTxtField(
-                      hintText: "Enter the service's price..",
+                      hintText: context.tr("price_hint"),
                       controller: priceController,
                       validator: (value) {
-                        if (value == null || value.length < 1) {
-                          return "Enter the price please!";
+                        if (value == null || value.isEmpty) {
+                          return context.tr("invalid_price");
                         }
                       },
                       onChange: (value) {
-                        return "fvsjv";
+                        setState(() {
+                          inputTextPrice = value;
+                          if(inputTextPrice!.isEmpty){
+                            price = null;
+                          }else{
+                              price = double.parse(inputTextPrice!);
+                          }
+                        });
                       },
                     ),
-                    const Text(
-                      "-15% for Taskito Commission",
-                      style: TextStyle(color: Colors.grey, fontSize: 15),
+                    if(price != null)
+                    Text(
+                      "${context.tr("You_will_take")} ${price!-(price!*0.15)}",
+                      style: const TextStyle(color: Colors.red, fontSize: 15),
+                    ),
+                    Text(
+                      context.tr("commission") + context.tr("EGP"),
+                      style: const TextStyle(color: Colors.red, fontSize: 15),
                     ),
                     SizedBox(
                       height: Dimensions.getHeight(0.02),
                     ),
-                    const Text("Category",
-                        style: TextStyle(
+                    Text(context.tr("category"),
+                        style: const TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold)),
+                    SizedBox(
+                      height: Dimensions.getHeight(0.01),
+                    ),
+                    DropdownButtonFormField(
+                      hint: Text(context.tr("select_an_option"), style: const TextStyle(color: Colors.grey),),
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: const BorderSide(color: Color.fromARGB(183, 224, 224, 224))
+                          )
+                      ),
+                      items: categories
+                  .map((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {
+                setState(() {
+                  selectedCategory = newValue;
+                });
+              },
+              ),
+                    SizedBox(
+                      height: Dimensions.getHeight(0.02),
+                    ),
+                    Text(context.tr("payment_method"),
+                        style: const TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold)),
+                    SizedBox(
+                      height: Dimensions.getHeight(0.01),
+                    ),
+                      DropdownButtonFormField(
+                      hint: Text(context.tr("select_an_option"), style: const TextStyle(color: Colors.grey),),
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: const BorderSide(color: Color.fromARGB(183, 224, 224, 224))
+                          )
+                      ),
+                      items: paymentMethods
+                  .map((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {
+                setState(() {
+                  selectedMethod = newValue;
+                });
+              },
+              ),
+                    SizedBox(
+                      height: Dimensions.getHeight(0.02),
+                    ),
+                    Text(context.tr("tags"),
+                        style: const TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold)),
                     SizedBox(
                       height: Dimensions.getHeight(0.01),
                     ),
                     MainTxtField(
-                        hintText: "Enter a job title for this service..",
-                        controller: categoryController),
-                    SizedBox(
-                      height: Dimensions.getHeight(0.02),
-                    ),
-                    const Text("Payment Method",
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold)),
-                    SizedBox(
-                      height: Dimensions.getHeight(0.01),
-                    ),
-                    MainTxtField(
-                        hintText: "Enter a job title for this service..",
-                        controller: paymentController),
-                    SizedBox(
-                      height: Dimensions.getHeight(0.02),
-                    ),
-                    const Text("Tags",
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold)),
-                    SizedBox(
-                      height: Dimensions.getHeight(0.01),
-                    ),
-                    MainTxtField(
-                        hintText: "Enter 5 words that express your service",
+                        hintText: context.tr("tags_hint"),
                         controller: tagsController),
                     SizedBox(
                       height: Dimensions.getHeight(0.02),
                     ),
-                    const Text("Service Description",
-                        style: TextStyle(
+                    Text(context.tr("service_description"),
+                        style: const TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold)),
                     SizedBox(
                       height: Dimensions.getHeight(0.01),
@@ -154,7 +221,7 @@ class AddService extends StatelessWidget {
                     TextFormField(
                         maxLines: 4,
                         decoration: InputDecoration(
-                            hintText: "Enter a description for this service..",
+                            hintText: context.tr("service_description_hint"),
                             enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(5),
                                 borderSide: const BorderSide(
@@ -169,18 +236,17 @@ class AddService extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.white,
                         backgroundColor: mainPurple,
-                        // padding: EdgeInsets.symmetric(horizontal: Dimensions.getWidth(0.2)),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                       child: SizedBox(
                         width: Dimensions.getWidth(0.3),
-                        child: const Row(
+                        child: Row(
                           children: [
-                            Icon(Icons.upload_rounded),
+                            const Icon(Icons.upload_rounded),
                             Text(
-                              "Service image",
+                              context.tr("service_image"),
                             )
                           ],
                         ),
@@ -193,7 +259,7 @@ class AddService extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         MainBtnStyle(
-                          text: "Post",
+                          text: context.tr("post"),
                           onPressed: () {},
                           width: Dimensions.getHeight(0.05),
                           customBorderRadius: 10,

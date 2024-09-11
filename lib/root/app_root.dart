@@ -10,7 +10,7 @@ import 'package:taskito/views/welcome_back.dart';
 
 import 'package:taskito/views/layout/layout.dart';
 import 'package:taskito/views/layout/servies_layout.dart';
-import 'package:taskito/views/servies/physical_servies.dart';
+import 'package:taskito/views/service/physical_service.dart';
 
 class AppRoot extends StatelessWidget {
   const AppRoot({super.key});
@@ -21,7 +21,7 @@ class AppRoot extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      home: WelcomeBack()
+      home: AddService()
     );
   }
 }

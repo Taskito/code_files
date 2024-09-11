@@ -3,8 +3,8 @@ import 'package:taskito/views/card/card.dart';
 import 'package:taskito/views/card/category_card.dart';
 import 'package:taskito/views/layout/layout.dart';
 import 'package:taskito/views/layout/servies_layout.dart';
-import 'package:taskito/views/servies/online_servies.dart';
-import 'package:taskito/views/servies/physical_servies.dart';
+import 'package:taskito/views/service/online_service.dart';
+import 'package:taskito/views/service/physical_service.dart';
 
 class MyHomeScreen extends StatefulWidget {
   const MyHomeScreen({super.key});

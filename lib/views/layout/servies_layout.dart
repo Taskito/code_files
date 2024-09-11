@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:taskito/views/servies/all_servies.dart';
-import 'package:taskito/views/servies/online_servies.dart';
-import 'package:taskito/views/servies/physical_servies.dart';
+import 'package:taskito/views/service/all_service.dart';
+import 'package:taskito/views/service/online_service.dart';
+import 'package:taskito/views/service/physical_service.dart';
 
 class ServiesLayout extends StatefulWidget { 
    final int ind ;
