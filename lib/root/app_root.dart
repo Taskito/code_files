@@ -8,6 +8,10 @@ import 'package:taskito/views/id_verification.dart';
 import 'package:taskito/views/successfull_upload.dart';
 import 'package:taskito/views/welcome_back.dart';
 
+import 'package:taskito/views/layout/layout.dart';
+import 'package:taskito/views/layout/servies_layout.dart';
+import 'package:taskito/views/servies/physical_servies.dart';
+
 class AppRoot extends StatelessWidget {
   const AppRoot({super.key});
   @override
