@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:taskito/core/helpers/dimensions.dart';
 import 'package:taskito/core/style/app_colors.dart';
@@ -6,24 +8,31 @@ class MainBtnStyle extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final Color color;
-  final double CustomBorderRadius;
+  final double customBorderRadius;
+  final double width; 
   const MainBtnStyle({
-      Key? key,
-      required this.text,
-      required this.onPressed,
-      this.color = mainPurple,
-      this.CustomBorderRadius = 0
-      }) : super(key: key);
+    Key? key,
+    required this.text,
+    required this.onPressed,
+    this.color = mainPurple,
+    this.customBorderRadius = 0,
+    required this.width,
+  }): super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    Dimensions.setDimensions(context);
     return ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-            foregroundColor: Colors.white,
-            backgroundColor: color,
-            padding: EdgeInsets.symmetric(horizontal: Dimensions.getWidth(0.35)),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(CustomBorderRadius))),
-        child: Text(text));
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        foregroundColor: Colors.white,
+        backgroundColor: color,
+        padding: EdgeInsets.symmetric(horizontal: width),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(customBorderRadius),
+        ),
+      ),
+      child: Text(text),
+    );
   }
 }
