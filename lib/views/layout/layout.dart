@@ -5,6 +5,8 @@ import 'package:taskito/views/home/home.dart';
 import 'package:taskito/views/layout/servies_layout.dart';
 import 'package:taskito/views/post/post_design.dart';
 import 'package:taskito/views/post/show_posts.dart';
+import 'package:taskito/views/sallerList/saller_list.dart';
+import 'package:taskito/views/userProfile/profile.dart';
 
 class MyLayout extends StatefulWidget {
     final int ind ;
@@ -30,7 +32,7 @@ class _MyLayoutState extends State<MyLayout> {
     MyHomeScreen(),
     ServiesLayout(ind: widget.ind ),
   ShowPosts(),
-    ServiesLayout(ind: widget.ind),
+    Profile()
 
     // MyFavouritelist(),
     // MyProfileScreen()
@@ -44,12 +46,15 @@ class _MyLayoutState extends State<MyLayout> {
   Widget build(BuildContext context) {
     return (
         Scaffold(
+         backgroundColor: Colors.white,
       // appBar: AppBar(),
       body: _pages.elementAt(selectedvalue),
 
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.transparent,
         items: const [
           BottomNavigationBarItem(
+            
               icon: Icon(CupertinoIcons.house_alt), label: "Home"),
           BottomNavigationBarItem(
               icon: Icon(Icons.extension), label: "servies"),

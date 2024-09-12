@@ -2,36 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:taskito/views/card/card.dart';
 
 class OnlineServies extends StatelessWidget {
-   OnlineServies({super.key});
 
- List<Map> products = [
-    {
-      'title': "Web Design",
-      "description": "Learn to cook delicious meals from home with our expert chefs guiding you.",
-      "imagePath": "asset/images/web-design.png"
-    },
- {
-      'title': "Web Design",
-      "description": "Learn to cook delicious meals from home with our expert chefs guiding you.",
-      "imagePath": "asset/images/web-design.png"
-    },
-    {
-      'title': "Web Design",
-      "description": "Learn to cook delicious meals from home with our expert chefs guiding you.",
-      "imagePath": "asset/images/web-design.png"
-    },
-    {
-      'title': "Web Design",
-      "description": "Learn to cook delicious meals from home with our expert chefs guiding you.",
-      "imagePath": "asset/images/web-design.png"
-    },
-    {
-      'title': "Web Design",
-      "description": "Learn to cook delicious meals from home with our expert chefs guiding you.",
-      "imagePath": "asset/images/web-design.png"
-    },
-  ];
+  final List<Map<String, dynamic>> products;
 
+  const OnlineServies({required this.products});
   @override
   Widget build(BuildContext context) {
     return Padding(

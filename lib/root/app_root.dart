@@ -11,13 +11,15 @@ class AppRoot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return const MaterialApp(
+      
+      color: Colors.white,
       debugShowCheckedModeBanner: false,
-<<<<<<< HEAD
+
       home: MyLayout(page: 0,ind: 0,),
-=======
-      home: EmailVerification()
->>>>>>> 7dc1a13048c5d967357d077bb9209a099a328ac2
+
+
     );
   }
 }

@@ -80,7 +80,7 @@ return Container(
                     decoration: BoxDecoration(
                       // color: Colors.amber,
                       image: DecorationImage(
-                        image: AssetImage("asset/images/Image 135 (2).png"), // Placeholder for image
+                        image: AssetImage("assets/images/Image 135 (2).png"), // Placeholder for image
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(10),
@@ -99,7 +99,7 @@ return Container(
                     decoration: BoxDecoration(
                       color: Colors.black,
                       image: DecorationImage(
-                        image:AssetImage("asset/images/Image 135 (3).png"), // Placeholder for image
+                        image:AssetImage("assets/images/Image 135 (3).png"), // Placeholder for image
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(10),
@@ -110,7 +110,7 @@ return Container(
                     decoration: BoxDecoration(
                       color: Colors.black,
                       image: DecorationImage(
-                        image: AssetImage("asset/images/web-design.png"), // Placeholder for image
+                        image: AssetImage("assets/images/web-design.png"), // Placeholder for image
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(10),

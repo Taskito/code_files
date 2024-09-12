@@ -18,11 +18,21 @@ class MainTxtField extends StatelessWidget {
         child: TextFormField(
             controller: controller,
             decoration: InputDecoration(
+              prefixIcon: fieldIcon,
               hintText: hintText,    
-              enabledBorder: OutlineInputBorder(
-                borderSide: const BorderSide(color: Color.fromARGB(183, 224, 224, 224)),
-                borderRadius: BorderRadius.circular(borderRadius)
-              )
-              )));
+              border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(borderRadius),
+          borderSide: BorderSide(color: Colors.grey, width: 1.0),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(borderRadius),
+          borderSide: BorderSide(color: Color.fromARGB(255, 116, 101, 230), width: 1.0),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(borderRadius),
+          borderSide: BorderSide(color: Colors.grey, width: 1.0),
+        ),
+              ))
+              );
   }
 }
