@@ -1,0 +1,25 @@
+{
+    "job_title": "Job title",
+    "change_language": "Change language",
+    "service_details":"Service details",
+    "service_info":"write down those information about your service",
+    "job_title_hint":"Enter a job title for this service..",
+    "invalid_job_title":"Invalid job title",
+    "price":"Price",
+    "price_hint":"Enter the service's price.." ,
+    "invalid_price":"Enter the price please!",
+    "category":"Category",
+    "You_will_take":"You will take",
+    "EGP":"EGP",
+    "commission":"-15% for Taskito Commission",
+    "select_an_option":"Select an option",
+    "payment_method":"Payment method",
+    "tags":"Tags",
+    "tags_hint":"Enter 5 words that express your service",
+    "service_description":"Service description",
+    "service_description_hint":"Enter a description for this service..",
+    "service_image":"Service image",
+    "post":"Post"
+
+    
+}

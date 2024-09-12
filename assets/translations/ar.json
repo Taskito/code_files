@@ -1,0 +1,23 @@
+{
+    "job_title": "المسمى الوظيفي",
+    "change_language": "تغيير اللغة",
+    "service_details":"تفاصيل الخدمة",
+    "service_info":"اكتب تلك المعلومات عن خدمتك",
+    "job_title_hint":"أدخل عنوان الوظيفي لهذه الخدمة",
+    "invalid_job_title":"مسمى وظيفي غير صحيح",
+    "price":"السعر",
+    "price_hint":"أدخل سعر الخدمة",
+    "invalid_price":"أدخل السعر من فضلك",
+    "category":"الفئة",
+    "You_will_take":"سوف تأخذ",
+    "EGP":" ج.م ",
+    "commission":"15% عمولة لتاسكيتو",
+    "select_an_option":"أختار",
+    "payment_method":"طريقة الدفع",
+    "tags":"كلمات مفتاحية",
+    "tags_hint":"أدخل 5 كلمات تعبر عن خدمتك",
+    "service_description":"وصف الخدمة",
+    "service_description_hint":"أدخل وصفًا لهذه الخدمة",
+    "service_image":"صورة للخدمة",
+    "post":"أنشر"
+}

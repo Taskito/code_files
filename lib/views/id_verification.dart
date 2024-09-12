@@ -27,7 +27,10 @@ class IdVerification extends StatelessWidget {
               Text("\n• It is well-lit and clear to read.\n• It is fully inside the frame and not clipped.", style: TextStyle(color: mainPurple, fontSize: 20),),
               SizedBox(height: Dimensions.getHeight(0.1),),
               Center(
-                child: MainBtnStyle(text: "Continue", onPressed: (){}, CustomBorderRadius: 10,),
+                child: MainBtnStyle(
+                  width: Dimensions.getHeight(0.35),
+                  text: "Continue", onPressed: (){}, customBorderRadius: 10,
+                  ),
               )
             ],
             ),
