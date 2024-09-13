@@ -46,7 +46,6 @@ class _MyLayoutState extends State<MyLayout> {
         Scaffold(
       // appBar: AppBar(),
       body: _pages.elementAt(selectedvalue),
-
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(

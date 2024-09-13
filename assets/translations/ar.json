@@ -19,5 +19,11 @@
     "service_description":"وصف الخدمة",
     "service_description_hint":"أدخل وصفًا لهذه الخدمة",
     "service_image":"صورة للخدمة",
-    "post":"أنشر"
+    "post":"أنشر",
+    "rateing":"التقييم",
+    "reviews":"الأراء",
+    "see_all":"أنظر الكل",
+    "about":"عن",
+    "services":"الخدمات",
+    "contact":"التواصل"
 }

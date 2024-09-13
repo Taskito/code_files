@@ -5,9 +5,11 @@ import 'package:easy_localization/easy_localization.dart';
 
 import 'package:taskito/views/email_verification.dart';
 import 'package:taskito/views/id_verification.dart';
+import 'package:taskito/views/profile/contact.dart';
+import 'package:taskito/views/profile/profile_details.dart';
+import 'package:taskito/views/profile/see_all_reviews.dart';
 import 'package:taskito/views/successfull_upload.dart';
 import 'package:taskito/views/welcome_back.dart';
-
 import 'package:taskito/views/layout/layout.dart';
 import 'package:taskito/views/layout/servies_layout.dart';
 import 'package:taskito/views/service/physical_service.dart';
@@ -21,7 +23,11 @@ class AppRoot extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      home: AddService()
+      home: ProfileDetails(),
+      routes: {
+        "chat": (context)=>Contact(),
+        "seeAll":(context)=>SeeAllReviews()
+      }
     );
   }
 }

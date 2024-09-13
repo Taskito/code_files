@@ -131,7 +131,6 @@ class _ServiesLayoutState extends State<ServiesLayout> {
     return GestureDetector(
       onTap: () => _onTabSelected(index),
       child: Container(
-       
         
         padding: EdgeInsets.only(top: 16,bottom: 16),
         decoration: BoxDecoration(
