@@ -260,7 +260,9 @@ class _AddServiceState extends State<AddService> {
                       children: [
                         MainBtnStyle(
                           text: context.tr("post"),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, "service_uploaded_successfully");
+                          },
                           width: Dimensions.getHeight(0.05),
                           customBorderRadius: 10,
                         )

@@ -59,6 +59,7 @@ class _CustomTabBarState extends State<CustomTabBar> {
               width: 60,
               margin: const EdgeInsets.symmetric(horizontal: 10),
             ),
+
             ],
           ),
           Column(
@@ -90,17 +91,39 @@ class _CustomTabBarState extends State<CustomTabBar> {
         ],
       ),
       (selectedIndex == 0)?
-      // Expanded(
-        // child: GridView.builder(
-        //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        //     crossAxisCount: 2
-        //     ),
-        //     itemBuilder: (context, value){
-        //       return Column(children: [
-        //         Text(services[1]["name"]!)
-        //       ],);
-        //     }),)
-      Text("Services")
+      Row(
+        children:[
+          GestureDetector(
+            onTap: (){
+              Navigator.pushNamed(context, "service_details");
+            },
+            child: Container(
+              margin: EdgeInsets.all(Dimensions.getWidth(0.02)),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.asset(
+                    "assets/images/paypall.png",
+                    width: Dimensions.getWidth(0.4),
+                    height: Dimensions.getWidth(0.4),
+                    fit: BoxFit.cover,
+                    ),
+                    const Text(
+                      "Logos",
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    ),
+                    const Text(
+                      "Description",
+                      style: TextStyle(color: Colors.grey, fontSize: 15),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    )
+                ],
+              ),
+            ),
+          )
+        ]
+      )
       :
         GestureDetector(
           onTap: (){
