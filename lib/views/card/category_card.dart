@@ -18,6 +18,7 @@ class CategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Card(
+        color: Colors.white,
         elevation: 4,
         child: Column(
           children: [

@@ -6,8 +6,12 @@ import 'package:taskito/views/service/physical_service.dart';
 
 class ServiesLayout extends StatefulWidget { 
    final int ind ;
+  //  final List<Map> products;
    const ServiesLayout(
-  { required this.ind}
+  { required this.ind,
+  // required this.products
+  
+  }
   );
 
   @override
@@ -15,24 +19,66 @@ class ServiesLayout extends StatefulWidget {
 }
 
 class _ServiesLayoutState extends State<ServiesLayout> {
+ String searchValue = "";
+  late int _selectedIndex;
+  List<Map<String, dynamic>> allProducts = [
+    {
+      'title': "Pet Grooming",
+      "description": "Professional grooming services for your pet to ensure they look and feel their best.",
+      "imagePath": "assets/images/bog.jpg",
+      "type":"physical"
+    },
+  {
+      'title': "Web Design",
+      "description": "Learn to cook delicious meals from home with our expert chefs guiding you.",
+      "imagePath": "assets/images/web-design.png",
+      "type":"online"
+    },
+    {
+      'title': "Pet Grooming",
+      "description": "Professional grooming services for your pet to ensure they look and feel their best.",
+      "imagePath": "assets/images/bog.jpg"
+      ,"type":"physical"
+    },
+    {
+      'title': "Web Design",
+      "description": "Learn to cook delicious meals from home with our expert chefs guiding you.",
+      "imagePath": "assets/images/web-design.png",
+      "type":"online"
+    },
+    {
+      'title': "Pet Grooming",
+      "description": "Professional grooming services for your pet to ensure they look and feel their best.",
+      "imagePath": "assets/images/bog.jpg",
+      "type":"physical"
+    },
+   {
+      'title': "Web Design",
+      "description": "Learn to cook delicious meals from home with our expert chefs guiding you.",
+      "imagePath": "assets/images/web-design.png",
+      "type":"online"
+    },
+  ];
 
- late int _selectedIndex;
+  List<Map<String, dynamic>> filteredProducts = [];
 
   @override
   void initState() {
     super.initState();
-    // Initialize _selectedIndex based on widget.ind
     _selectedIndex = widget.ind;
+    filteredProducts = allProducts; // Initialize with all products
   }
 
+  void _filterProducts(String searchValue) {
+    setState(() {
+      filteredProducts = allProducts
+          .where((product) => product["title"]
+              .toLowerCase()
+              .contains(searchValue.toLowerCase()))
+          .toList();
+    });
+  }
 
-  final List<Widget> _pages = [
-  AllServies(),
-  OnlineServies(),
-  PhysicalServies()
-
-  ];
-  
 
   
   void _onTabSelected(int index) {
@@ -43,7 +89,17 @@ class _ServiesLayoutState extends State<ServiesLayout> {
 
   @override
   Widget build(BuildContext context) {
+     final List<Widget> _pages = [
+    AllServies(products: filteredProducts), // We will pass filteredProducts to these pages later
+    OnlineServies(products: filteredProducts
+          .where((product) => product["type"] == "online")
+          .toList()),
+      PhysicalServies(products: filteredProducts
+          .where((product) => product["type"] == "physical")
+          .toList()),
+  ];
     return Scaffold(
+      backgroundColor: Colors.white,
       
       body: Container(
         
@@ -62,7 +118,7 @@ class _ServiesLayoutState extends State<ServiesLayout> {
                     
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: SizedBox(
-                      height: 35,
+                      height: 40,
                       child: TextField(
                       
                         decoration: InputDecoration(
@@ -80,8 +136,12 @@ class _ServiesLayoutState extends State<ServiesLayout> {
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(30.0),
           borderSide: BorderSide(color: Colors.grey, width: 1.0),
-        ),
+        )
+        ,
                         ),
+                           onChanged: (value) {
+                           _filterProducts(value);
+                            },
                       ),
                     ),
                   ),
@@ -93,7 +153,7 @@ class _ServiesLayoutState extends State<ServiesLayout> {
                   backgroundColor: Colors.purple,
                   child: ClipOval(
                     child: Image.asset(
-                      'asset/images/bog.jpg', // Replace with your image URL
+                      'assets/images/bog.jpg', // Replace with your image URL
                       fit: BoxFit.cover,
                     ),
                   ),

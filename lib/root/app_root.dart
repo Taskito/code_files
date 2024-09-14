@@ -17,17 +17,17 @@ import 'package:taskito/views/service/physical_service.dart';
 class AppRoot extends StatelessWidget {
   const AppRoot({super.key});
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {    
     return MaterialApp(
+      color: Colors.white,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      home: ProfileDetails(),
       routes: {
         "chat": (context)=>Contact(),
         "seeAll":(context)=>SeeAllReviews()
       }
     );
-  }
+}
 }

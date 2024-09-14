@@ -18,9 +18,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-       return Scaffold(
-   
-      body: SingleChildScrollView(
+       return  SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(0,36,0,10),
           child: Column(
@@ -34,24 +32,12 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                     width: double.infinity,
                     decoration: const BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage('asset/images/bac_header.png'),
+                        image: AssetImage('assets/images/bac_header.png'),
                         fit: BoxFit.cover,
                       ),
                     ),
                   ),
-                  // Padding(
-                  //   padding: const EdgeInsets.only(top: 100.0),
-                  //   child: Center(
-                  //     child: Text(
-                  //       'Taskito',
-                  //       style: TextStyle(
-                  //         color: Colors.white,
-                  //         fontSize: 40,
-                  //         fontWeight: FontWeight.bold,
-                  //       ),
-                  //     ),
-                  //   ),
-                  // ),
+                 
                 ],
               ),
               
@@ -106,12 +92,12 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     CardDesign(
-                      imagePath: 'asset/images/bog.jpg',
+                      imagePath: 'assets/images/bog.jpg',
                       title: 'Pet Grooming',
                       description: 'Professional grooming services for your pet to ensure they look and feel their best.',
                     ),
                     CardDesign(
-                      imagePath: 'asset/images/web-design.png',
+                      imagePath: 'assets/images/web-design.png',
                       title: 'Web Design',
                       description: 'Learn to cook delicious meals from home with our expert chefs guiding you.',
                     ),
@@ -141,7 +127,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     CategoryCard(
-                        imagePath: 'asset/images/Image 135 (3).png',
+                        imagePath: 'assets/images/Image 135 (3).png',
                       title: 'Online Services',
                       buttonText: 'See More',
                       goto:MyLayout(ind: 1, page: 1)
@@ -158,8 +144,8 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
             ],
           ),
         ),
-      ),
-    );
+      )
+    ;
   
   }
 }

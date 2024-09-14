@@ -2,40 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:taskito/views/card/card.dart';
 
 class PhysicalServies extends StatelessWidget {
-   PhysicalServies({super.key});
+     final List<Map<String, dynamic>> products;
 
- List<Map> products = [
-    {
-      'title': "Pet Grooming",
-      "description": "Professional grooming services for your pet to ensure they look and feel their best.",
-      "imagePath": "asset/images/bog.jpg"
-    },
-   {
-      'title': "Pet Grooming",
-      "description": "Professional grooming services for your pet to ensure they look and feel their best.",
-      "imagePath": "asset/images/bog.jpg"
-    },
-    {
-      'title': "Pet Grooming",
-      "description": "Professional grooming services for your pet to ensure they look and feel their best.",
-      "imagePath": "asset/images/bog.jpg"
-    },
-    {
-      'title': "Pet Grooming",
-      "description": "Professional grooming services for your pet to ensure they look and feel their best.",
-      "imagePath": "asset/images/bog.jpg"
-    },
-    {
-      'title': "Pet Grooming",
-      "description": "Professional grooming services for your pet to ensure they look and feel their best.",
-      "imagePath": "asset/images/bog.jpg"
-    },
-    {
-      'title': "Pet Grooming",
-      "description": "Professional grooming services for your pet to ensure they look and feel their best.",
-      "imagePath": "asset/images/bog.jpg"
-    },
-  ];
+  const PhysicalServies({required this.products});
+ 
 
   @override
   Widget build(BuildContext context) {
