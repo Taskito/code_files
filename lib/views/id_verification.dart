@@ -23,13 +23,15 @@ class IdVerification extends StatelessWidget {
                 child: Image.asset("assets/images/ID_card.png", width: Dimensions.getWidth(0.6),),
               ),
               SizedBox(height: Dimensions.getHeight(0.05)),
-              Text("Please ensure that your national ID meets the following criteria:", style: TextStyle(color: mainPurple, fontWeight: FontWeight.bold, fontSize: 22),),
-              Text("\n• It is well-lit and clear to read.\n• It is fully inside the frame and not clipped.", style: TextStyle(color: mainPurple, fontSize: 20),),
+              const Text("Please ensure that your national ID meets the following criteria:", style: TextStyle(color: mainPurple, fontWeight: FontWeight.bold, fontSize: 22),),
+              const Text("\n• It is well-lit and clear to read.\n• It is fully inside the frame and not clipped.", style: TextStyle(color: mainPurple, fontSize: 20),),
               SizedBox(height: Dimensions.getHeight(0.1),),
               Center(
                 child: MainBtnStyle(
                   width: Dimensions.getHeight(0.35),
-                  text: "Continue", onPressed: (){}, customBorderRadius: 10,
+                  text: "Continue", onPressed: (){
+                    Navigator.pushNamed(context, "email_verification");
+                  }, customBorderRadius: 10,
                   ),
               )
             ],

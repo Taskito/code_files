@@ -8,6 +8,7 @@ import 'package:taskito/views/id_verification.dart';
 import 'package:taskito/views/privacy_policy.dart';
 import 'package:taskito/views/profile/account_settings.dart';
 import 'package:taskito/views/profile/contact.dart';
+import 'package:taskito/views/profile/edit_profile.dart';
 import 'package:taskito/views/profile/profile_details.dart';
 import 'package:taskito/views/profile/see_all_reviews.dart';
 import 'package:taskito/views/service/service_uploaded_successfully.dart';
@@ -18,6 +19,7 @@ import 'package:taskito/views/layout/layout.dart';
 import 'package:taskito/views/layout/servies_layout.dart';
 import 'package:taskito/views/service/physical_service.dart';
 import 'package:taskito/views/service/service_details.dart';
+import 'package:taskito/views/widgets/splash.dart/splash.dart';
 
 
 class AppRoot extends StatelessWidget {
@@ -25,12 +27,13 @@ class AppRoot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {    
     return MaterialApp(
+      
       color: Colors.white,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      home: const AccountSettings(),
+      home: const Splash(),
       routes: {
         "chat": (context)=>Contact(),
         "seeAll": (context)=> const SeeAllReviews(),
@@ -39,7 +42,12 @@ class AppRoot extends StatelessWidget {
         "about_us": (context)=> const AboutUs(),
         "terms_conditions": (context)=> const TermsConditions(),
         "privacy_policy": (context)=> const PrivacyPolicy(),
-        "account_settings": (context)=> const AccountSettings()
+        "account_settings": (context)=> const AccountSettings(),
+        "edit_profile": (context)=> const EditProfile(),
+        "id_verification": (context)=> const IdVerification(),
+        "email_verification" : (context)=> const EmailVerification(),
+        "successfull_uplaod" : (context)=> const SuccessfullUpload(),
+        "welcome_back": (context)=>const WelcomeBack(),
       }
     );
 }

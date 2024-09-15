@@ -29,7 +29,9 @@ class SuccessfullUpload extends StatelessWidget {
         MainBtnStyle(
           width: Dimensions.getHeight(0.35),
           text: "Continue",
-          onPressed: () {})
+          onPressed: () {
+            Navigator.pushNamed(context, "welcome_back");
+          })
       ]),
     ));
   }
