@@ -29,7 +29,9 @@ class ProfileSaller extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, "edit_profile");
+                          },
                           icon: Icon(Icons.mode_edit_outline_outlined))
                     ],
                   ),

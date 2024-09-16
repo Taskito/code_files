@@ -14,6 +14,7 @@ import 'package:taskito/views/profile/see_all_reviews.dart';
 import 'package:taskito/views/service/service_uploaded_successfully.dart';
 import 'package:taskito/views/successfull_upload.dart';
 import 'package:taskito/views/terms_conditions.dart';
+import 'package:taskito/views/userProfile/profile.dart';
 import 'package:taskito/views/welcome_back.dart';
 import 'package:taskito/views/layout/layout.dart';
 import 'package:taskito/views/layout/servies_layout.dart';
@@ -33,7 +34,7 @@ class AppRoot extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      home: const Splash(),
+      home: EditProfile(),
       routes: {
         "chat": (context)=>Contact(),
         "seeAll": (context)=> const SeeAllReviews(),
@@ -43,7 +44,7 @@ class AppRoot extends StatelessWidget {
         "terms_conditions": (context)=> const TermsConditions(),
         "privacy_policy": (context)=> const PrivacyPolicy(),
         "account_settings": (context)=> const AccountSettings(),
-        "edit_profile": (context)=> const EditProfile(),
+        "edit_profile": (context)=> EditProfile(),
         "id_verification": (context)=> const IdVerification(),
         "email_verification" : (context)=> const EmailVerification(),
         "successfull_uplaod" : (context)=> const SuccessfullUpload(),
