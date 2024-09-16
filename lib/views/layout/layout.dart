@@ -49,7 +49,6 @@ class _MyLayoutState extends State<MyLayout> {
          backgroundColor: Colors.white,
       // appBar: AppBar(),
       body: _pages.elementAt(selectedvalue),
-
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.transparent,
         items: const [

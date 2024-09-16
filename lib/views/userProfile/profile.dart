@@ -4,6 +4,7 @@ import 'package:taskito/views/dealings/all_dealing.dart';
 import 'package:taskito/views/language/launguage.dart';
 import 'package:taskito/views/notification/notifcation.dart';
 import 'package:taskito/views/payment/payment.dart';
+import 'package:taskito/views/profile/account_settings.dart';
 
 class Profile extends StatelessWidget {
   @override
@@ -12,6 +13,7 @@ class Profile extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         toolbarHeight: 20,
+        leading: Text(" "),
       ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -27,7 +29,9 @@ class Profile extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => AccountSettings(),));
+                          },
                           icon: Icon(Icons.mode_edit_outline_outlined))
                     ],
                   ),
@@ -198,7 +202,9 @@ class Profile extends StatelessWidget {
                             ],
                           ),
                           IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(builder:(context)=>AccountSettings() ));
+                              },
                               icon: Icon(
                                 Icons.arrow_forward_ios_outlined,
                                 color: Colors.grey,

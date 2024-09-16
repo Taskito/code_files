@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:taskito/core/style/app_colors.dart';
+import 'package:taskito/views/layout/layout.dart';
 import 'package:taskito/views/post/show_posts.dart';
 
 class CreatePost extends StatelessWidget {
@@ -101,7 +102,7 @@ class CreatePost extends StatelessWidget {
               if (_formkey.currentState!.validate()) {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => ShowPosts()),
+                  MaterialPageRoute(builder: (context) => MyLayout(ind: 0, page: 2)),
                 );
               }
             },

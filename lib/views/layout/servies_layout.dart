@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:taskito/views/layout/layout.dart';
+import 'package:taskito/views/profile/profile_details.dart';
 import 'package:taskito/views/service/all_service.dart';
 import 'package:taskito/views/service/online_service.dart';
 import 'package:taskito/views/service/physical_service.dart';
+import 'package:taskito/views/userProfile/profile.dart';
 
 class ServiesLayout extends StatefulWidget { 
    final int ind ;
@@ -148,16 +151,27 @@ class _ServiesLayoutState extends State<ServiesLayout> {
                 ),
                 Expanded(
                   flex: 1,
-                    child: CircleAvatar(
-                  radius: 20,
-                  backgroundColor: Colors.purple,
-                  child: ClipOval(
-                    child: Image.asset(
-                      'assets/images/bog.jpg', // Replace with your image URL
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ))
+                    child: InkWell(
+                      onTap: () {
+                        if("user_type"=="saller"){
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyLayout(ind: 0, page: 4),));
+
+                        }else{
+                           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyLayout(ind: 0, page: 3),));
+
+                        }
+                      },
+                      child: CircleAvatar(
+                                        radius: 20,
+                                        backgroundColor: Colors.purple,
+                                        child: ClipOval(
+                      child: Image.asset(
+                        'assets/images/bog.jpg', // Replace with your image URL
+                        fit: BoxFit.cover,
+                      ),
+                                        ),
+                                      ),
+                    ))
               ],
             ),
             SizedBox(
@@ -191,7 +205,6 @@ class _ServiesLayoutState extends State<ServiesLayout> {
     return GestureDetector(
       onTap: () => _onTabSelected(index),
       child: Container(
-       
         
         padding: EdgeInsets.only(top: 16,bottom: 16),
         decoration: BoxDecoration(

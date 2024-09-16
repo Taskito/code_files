@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-typedef callback = String? Function(String?);
-
+typedef Callback = String? Function(String?);
 
 class MainTxtField extends StatelessWidget {
   final double borderRadius;
@@ -9,7 +8,8 @@ class MainTxtField extends StatelessWidget {
   final TextEditingController controller;
   final Icon? fieldIcon;
   final String? Function(String?)? validator;
-  final String? Function(String?)? onChange;
+  final Callback? onChange;
+
   const MainTxtField({
     Key? key,
     this.borderRadius = 20,
@@ -17,8 +17,9 @@ class MainTxtField extends StatelessWidget {
     required this.controller,
     this.fieldIcon,
     this.validator,
-    this.onChange
-  });
+    this.onChange,
+  }) : super(key: key); 
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -29,20 +30,23 @@ class MainTxtField extends StatelessWidget {
 
               prefixIcon: fieldIcon,
               hintText: hintText,    
-              border: OutlineInputBorder(
+              
+        hintStyle: const TextStyle(color: Colors.grey),
+        border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
-          borderSide: BorderSide(color: Colors.grey, width: 1.0),
+          borderSide: const BorderSide(color: Colors.grey, width: 1.0),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
-          borderSide: BorderSide(color: Color.fromARGB(255, 116, 101, 230), width: 1.0),
+          borderSide: const BorderSide(color: Color.fromARGB(255, 116, 101, 230), width: 1.0),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
-          borderSide: BorderSide(color: Colors.grey, width: 1.0),
+          borderSide: const BorderSide(color: Colors.grey, width: 1.0),
         ),
               ));
 
 
+   
   }
 }

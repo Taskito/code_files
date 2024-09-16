@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:taskito/core/components/main_btn_style.dart';
 import 'package:taskito/core/helpers/dimensions.dart';
 import 'package:taskito/core/style/app_colors.dart';
+import 'package:taskito/views/layout/layout%20copy.dart';
+import 'package:taskito/views/layout/layout.dart';
 
 class WelcomeBack extends StatelessWidget {
   const WelcomeBack({super.key});
@@ -28,8 +30,11 @@ class WelcomeBack extends StatelessWidget {
           SizedBox(height: Dimensions.getHeight(0.3)),
           MainBtnStyle(
             width: Dimensions.getHeight(0.17),
+            customBorderRadius: 10,
             text: "Continue",
-            onPressed: () {})
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => MySaller(ind: 0, page: 0),));
+            })
         ]),
             ),
       ));

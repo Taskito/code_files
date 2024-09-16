@@ -53,7 +53,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                       hintText: 'Search for services',
                       hintStyle: TextStyle(fontSize: 14,color: Colors.grey),
                       prefixIcon: Icon(Icons.search,color: Colors.grey),
-                           border: OutlineInputBorder(
+                          border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(30.0),
           borderSide: BorderSide(color: Colors.grey, width: 1.0),
         ),
@@ -133,8 +133,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                       goto:MyLayout(ind: 1, page: 1)
                     ),
                     CategoryCard(
-                   
-                         imagePath: 'assets/images/Image 135 (2).png',
+                      imagePath: 'assets/images/work.png',
                       title: 'Physical Services',
                       buttonText: 'See More',
                       goto:MyLayout(ind: 2, page: 1)

@@ -80,7 +80,7 @@ return Container(
                     decoration: BoxDecoration(
                       // color: Colors.amber,
                       image: DecorationImage(
-                        image: AssetImage("assets/images/Image 135 (2).png"), // Placeholder for image
+                        image: AssetImage("assets/images/work.png"), // Placeholder for image
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(10),

@@ -45,9 +45,11 @@ class EmailVerification extends StatelessWidget {
               ),
               Center(
                 child: MainBtnStyle(
-                  width: Dimensions.getHeight(0.35),
+                  width: Dimensions.getHeight(0.17),
                   text: "Continue",
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, "successfull_uplaod");
+                  },
                   customBorderRadius: 10,
                 ),
               )
