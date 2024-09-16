@@ -359,7 +359,9 @@ class ProfileSaller extends StatelessWidget {
                             ),
                             IconButton(
                                 onPressed: () {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileDetails()));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileDetails(
+                                    
+                                  )));
                                 },
                                 icon: Icon(
                                   Icons.arrow_forward_ios_outlined,

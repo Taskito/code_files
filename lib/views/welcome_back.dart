@@ -30,6 +30,7 @@ class WelcomeBack extends StatelessWidget {
           SizedBox(height: Dimensions.getHeight(0.3)),
           MainBtnStyle(
             width: Dimensions.getHeight(0.17),
+            customBorderRadius: 10,
             text: "Continue",
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => MySaller(ind: 0, page: 0),));

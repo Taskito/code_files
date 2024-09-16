@@ -63,7 +63,7 @@ class Explore extends StatelessWidget {
                   // Continue with Google button
                   _buildAuthButton(
                     'Continue with Google',
-                    'assets/google.png',
+                    'assets/images/google.png',
                     () {
                       Navigator.pushReplacement(
                         context,
@@ -79,7 +79,7 @@ class Explore extends StatelessWidget {
                   // Continue with Apple button
                   _buildAuthButton(
                     'Continue with Apple',
-                    'assets/apple-logo.png',
+                    'assets/images/apple-logo.png',
                     () {
                       Navigator.pushReplacement(
                         context,
@@ -95,7 +95,7 @@ class Explore extends StatelessWidget {
                   // Continue with Email button
                   _buildAuthButton(
                     'Continue with Email',
-                    'assets/email.png',
+                    'assets/images/email.png',
                     () {
                       Navigator.pushReplacement(
                         context,
@@ -111,7 +111,7 @@ class Explore extends StatelessWidget {
                   // Register button
                   _buildAuthButton(
                     'Create New Account',
-                    'assets/register.png',
+                    'assets/images/register.png',
                     () {
                       Navigator.push(
                         context,

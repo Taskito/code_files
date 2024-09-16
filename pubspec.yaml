@@ -68,25 +68,6 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-
-
-    - assets/images/bac_header.png
-    - assets/images/bog.jpg
-    - assets/images/web-design.png
-    - assets/images/Image 135 (3).png
-    - assets/images/Image 135 (2).png
-    - assets/images/user.png
-    - assets/images/credit-card.png
-    - assets/images/translate.png
-    - assets/images/Apple_Pay-Logo.wine.png
-    - assets/images/visa.png
-    - assets/images/paypall.png
-    - assets/images/offer.png
-    - assets/images/offer_bac.png
-    
-
-
-
     - assets/images/
     - assets/translations/
 

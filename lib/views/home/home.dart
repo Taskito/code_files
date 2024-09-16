@@ -133,7 +133,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                       goto:MyLayout(ind: 1, page: 1)
                     ),
                     CategoryCard(
-                      imagePath: 'asset/images/work.png',
+                      imagePath: 'assets/images/work.png',
                       title: 'Physical Services',
                       buttonText: 'See More',
                       goto:MyLayout(ind: 2, page: 1)

@@ -69,7 +69,7 @@ class UploadPhoto extends StatelessWidget {
                           ],
                         ),
                         child: Image.asset(
-                          'assets/Upload.png', // Upload icon
+                          'assets/images/Upload.png', // Upload icon
                           width: size.width * 0.15, // Increased icon width
                           height: size.width * 0.15, // Increased icon height
                         ),

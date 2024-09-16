@@ -17,7 +17,7 @@ class IdVerification extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Time To verify Your Identity", style: TextStyle(color: mainPurple, fontWeight: FontWeight.bold, fontSize: 25),),
+              const Text("Time To verify Your Identity", style: TextStyle(color: mainPurple, fontWeight: FontWeight.bold, fontSize: 25),),
               SizedBox(height: Dimensions.getHeight(0.1)),
               Center(
                 child: Image.asset("assets/images/ID_card.png", width: Dimensions.getWidth(0.6),),
@@ -28,7 +28,7 @@ class IdVerification extends StatelessWidget {
               SizedBox(height: Dimensions.getHeight(0.1),),
               Center(
                 child: MainBtnStyle(
-                  width: Dimensions.getHeight(0.35),
+                  width: Dimensions.getHeight(0.17),
                   text: "Continue", onPressed: (){
                     Navigator.pushNamed(context, "email_verification");
                   }, customBorderRadius: 10,
