@@ -26,7 +26,7 @@ class MainTxtField extends StatelessWidget {
             validator: validator,
             onChanged: onChange,
             decoration: InputDecoration(
-<<<<<<< HEAD
+
               prefixIcon: fieldIcon,
               hintText: hintText,    
               border: OutlineInputBorder(
@@ -41,17 +41,8 @@ class MainTxtField extends StatelessWidget {
           borderRadius: BorderRadius.circular(borderRadius),
           borderSide: BorderSide(color: Colors.grey, width: 1.0),
         ),
-              ))
-=======
-              hintText: hintText,
-              hintStyle: TextStyle(color: Colors.grey),
-              icon: fieldIcon,
-              enabledBorder: OutlineInputBorder(
-                borderSide: const BorderSide(color: Color.fromARGB(183, 224, 224, 224)),
-                borderRadius: BorderRadius.circular(borderRadius)
-              )
-              )
->>>>>>> 1888a1a4a3e70acc1edf677cf5bd89c26dc4d486
-              );
+              ));
+
+
   }
 }

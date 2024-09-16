@@ -16,7 +16,7 @@ class AppRoot extends StatelessWidget {
   const AppRoot({super.key});
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
+// <<<<<<< HEAD
     
     return const MaterialApp(
       
@@ -26,14 +26,14 @@ class AppRoot extends StatelessWidget {
       home: MyLayout(page: 0,ind: 0,),
 
 
-=======
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
-      home: AddService()
->>>>>>> 1888a1a4a3e70acc1edf677cf5bd89c26dc4d486
+
+    // return MaterialApp(
+    //   debugShowCheckedModeBanner: false,
+    //   localizationsDelegates: context.localizationDelegates,
+    //   supportedLocales: context.supportedLocales,
+    //   locale: context.locale,
+    //   home: AddService()
+
     );
   }
 }
