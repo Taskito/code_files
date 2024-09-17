@@ -5,6 +5,7 @@ import 'package:taskito/views/home/home.dart';
 import 'package:taskito/views/layout/servies_layout.dart';
 import 'package:taskito/views/post/post_design.dart';
 import 'package:taskito/views/post/show_posts.dart';
+import 'package:taskito/views/profile/profile_details.dart';
 import 'package:taskito/views/sallerList/saller_list.dart';
 import 'package:taskito/views/userProfile/profile.dart';
 
@@ -32,7 +33,9 @@ class _MyLayoutState extends State<MyLayout> {
     MyHomeScreen(),
     ServiesLayout(ind: widget.ind ),
   ShowPosts(),
-    Profile()
+    ProfileDetails(),
+    Profile(),
+    
 
     // MyFavouritelist(),
     // MyProfileScreen()
@@ -56,12 +59,13 @@ class _MyLayoutState extends State<MyLayout> {
             
               icon: Icon(CupertinoIcons.house_alt), label: "Home"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.extension), label: "servies"),
+              icon: Icon(Icons.extension), label: "Services"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.article_outlined), label: "posts"),
+              icon: Icon(Icons.article_outlined), label: "Posts"),
           BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.person), label: "profile"),
-        
+              icon: Icon(CupertinoIcons.person), label: "Profile"),  
+          BottomNavigationBarItem(
+              icon: Icon(Icons.settings_outlined), label: "Settings"),  
         ],
         onTap: (value) {
           setState(() {

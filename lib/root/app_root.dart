@@ -34,7 +34,7 @@ class AppRoot extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      home: EditProfile(),
+      home: MyLayout(ind: 0, page: 0,),
       routes: {
         "chat": (context)=>Contact(),
         "seeAll": (context)=> const SeeAllReviews(),

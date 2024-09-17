@@ -64,8 +64,9 @@ class EditProfile extends StatelessWidget {
               SizedBox(height: Dimensions.getHeight(0.02),),
               Center(child: MainBtnStyle(text: "Update", onPressed: (){}, width: Dimensions.getWidth(0.2), customBorderRadius: 10,))
             ]
-            ,),
-        ),),
+          ,),
+        ),
+      ),
     );
   }
 }
