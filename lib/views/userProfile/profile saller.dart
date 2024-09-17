@@ -14,6 +14,7 @@ class ProfileSaller extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         toolbarHeight: 20,
+        leading: Text(" "),
       ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -30,7 +31,7 @@ class ProfileSaller extends StatelessWidget {
                     children: [
                       IconButton(
                           onPressed: () {
-                            Navigator.pushNamed(context, "edit_profile");
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => AccountSettings(),));
                           },
                           icon: Icon(Icons.mode_edit_outline_outlined))
                     ],
@@ -312,17 +313,11 @@ class ProfileSaller extends StatelessWidget {
                                 ))
                           ],
                         ),
-                        // color: Color.fromRGBO(116, 101, 230, 1)
+                   
                       ),
                     ),
                   ),
-
-                  // ListTile(
-                  //   leading: Icon(Icons.payment),
-                  //   title: Text('Payment'),
-                  //   trailing: Icon(Icons.arrow_forward),
-                  // ),
-                   InkWell(
+                    InkWell(
                     onTap: () {
                        Navigator.push(context, MaterialPageRoute(builder: (context) => Payment(),));
                     },
@@ -375,12 +370,7 @@ class ProfileSaller extends StatelessWidget {
                       ),
                     ),
                   ),
-
-                  // ListTile(
-                  //   leading: Icon(Icons.payment),
-                  //   title: Text('Payment'),
-                  //   trailing: Icon(Icons.arrow_forward),
-                  // ),
+             
                 ],
               ),
             ),

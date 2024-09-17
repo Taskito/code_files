@@ -26,6 +26,8 @@ import 'package:taskito/views/widgets/splash.dart/splash.dart';
 class AppRoot extends StatelessWidget {
   const AppRoot({super.key});
   @override
+
+
   Widget build(BuildContext context) {    
     return MaterialApp(
       
@@ -50,6 +52,7 @@ class AppRoot extends StatelessWidget {
         "successfull_uplaod" : (context)=> const SuccessfullUpload(),
         "welcome_back": (context)=>const WelcomeBack(),
       }
+
     );
 }
 }

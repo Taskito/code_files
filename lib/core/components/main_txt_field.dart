@@ -23,12 +23,14 @@ class MainTxtField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: controller,
-      validator: validator,
-      onChanged: onChange,
-      decoration: InputDecoration(
-        prefixIcon: fieldIcon,
-        hintText: hintText,
+            controller: controller,
+            validator: validator,
+            onChanged: onChange,
+            decoration: InputDecoration(
+
+              prefixIcon: fieldIcon,
+              hintText: hintText,    
+              
         hintStyle: const TextStyle(color: Colors.grey),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
@@ -42,7 +44,9 @@ class MainTxtField extends StatelessWidget {
           borderRadius: BorderRadius.circular(borderRadius),
           borderSide: const BorderSide(color: Colors.grey, width: 1.0),
         ),
-      ),
-    );
+              ));
+
+
+   
   }
 }

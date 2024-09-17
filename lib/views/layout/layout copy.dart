@@ -7,6 +7,7 @@ import 'package:taskito/views/post/post_design.dart';
 import 'package:taskito/views/post/show_posts.dart';
 import 'package:taskito/views/profile/profile_details.dart';
 import 'package:taskito/views/sallerList/saller_list.dart';
+import 'package:taskito/views/userProfile/profile%20saller.dart';
 import 'package:taskito/views/userProfile/profile.dart';
 
 class MySaller extends StatefulWidget {
@@ -34,7 +35,7 @@ class _MyLayoutState extends State<MySaller> {
     ServiesLayout(ind: widget.ind ),
   ShowPosts(),
   ProfileDetails(),
-    Profile()
+    ProfileSaller()
 
     // MyFavouritelist(),
     // MyProfileScreen()

@@ -13,6 +13,7 @@ class Profile extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         toolbarHeight: 20,
+        leading: Text(" "),
       ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -28,7 +29,9 @@ class Profile extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => AccountSettings(),));
+                          },
                           icon: Icon(Icons.mode_edit_outline_outlined))
                     ],
                   ),
