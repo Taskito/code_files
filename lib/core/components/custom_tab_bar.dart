@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:taskito/core/helpers/dimensions.dart';
 import 'package:taskito/core/style/app_colors.dart';
@@ -33,9 +32,13 @@ class _CustomTabBarState extends State<CustomTabBar> {
   Widget build(BuildContext context) {
     Dimensions.setDimensions(context);
     return Column(
-      children: [Row(
+      children: [
+      Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Column(
+          Row(
+            children: [
+                        Column(
             children: [
             GestureDetector(
               onTap: (){
@@ -59,7 +62,6 @@ class _CustomTabBarState extends State<CustomTabBar> {
               width: 60,
               margin: const EdgeInsets.symmetric(horizontal: 10),
             ),
-
             ],
           ),
           Column(
@@ -88,6 +90,11 @@ class _CustomTabBarState extends State<CustomTabBar> {
               ),
             ],
           ),
+          ],
+          ),
+          IconButton(onPressed: (){
+            Navigator.pushNamed(context, "add_service");
+          }, icon: const Icon(Icons.add_circle_outline, color: mainPurple, size: 25))
         ],
       ),
       (selectedIndex == 0)?

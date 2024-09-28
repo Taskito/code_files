@@ -30,7 +30,7 @@ class IdVerification extends StatelessWidget {
                 child: MainBtnStyle(
                   width: Dimensions.getHeight(0.17),
                   text: "Continue", onPressed: (){
-                    Navigator.pushNamed(context, "email_verification");
+                    Navigator.pushReplacementNamed(context, "email_verification");
                   }, customBorderRadius: 10,
                   ),
               )

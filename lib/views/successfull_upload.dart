@@ -32,7 +32,7 @@ class SuccessfullUpload extends StatelessWidget {
             customBorderRadius: 10,
             text: "Continue",
             onPressed: () {
-              Navigator.pushNamed(context, "welcome_back");
+              Navigator.pushReplacementNamed(context, "welcome_back");
             })
         ]),
             ),

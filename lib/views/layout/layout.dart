@@ -56,7 +56,6 @@ class _MyLayoutState extends State<MyLayout> {
         backgroundColor: Colors.transparent,
         items: const [
           BottomNavigationBarItem(
-            
               icon: Icon(CupertinoIcons.house_alt), label: "Home"),
           BottomNavigationBarItem(
               icon: Icon(Icons.extension), label: "Services"),

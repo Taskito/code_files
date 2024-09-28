@@ -51,8 +51,8 @@ class AppRoot extends StatelessWidget {
         "email_verification" : (context)=> const EmailVerification(),
         "successfull_uplaod" : (context)=> const SuccessfullUpload(),
         "welcome_back": (context)=>const WelcomeBack(),
+        "add_service": (context)=> const AddService()
       }
-
     );
 }
 }
