@@ -11,7 +11,7 @@ class Payment extends StatefulWidget {
 }
 
 class _PaymentState extends State<Payment> {
- String _selectedCard = 'Visa'; 
+ String _selectedCard = 'Attijarywafa'; 
    bool _acceptTerms = true;
   bool _useAsDefault = false;
   TextEditingController cardname=TextEditingController(); // Default selected card
@@ -23,7 +23,7 @@ class _PaymentState extends State<Payment> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-         title: Text("Payment"),
+        title: Text("Payment"),
         centerTitle: true,
         backgroundColor: Colors.white,
       ),
@@ -46,10 +46,9 @@ class _PaymentState extends State<Payment> {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-              
+                _buildCardOption('Attijarywafa', 'assets/images/bank.png'), 
                 _buildCardOption('Visa', 'assets/images/visa.png'), // Visa card option
                 _buildCardOption('PayPal', 'assets/images/paypall.png'), // PayPal option
-                _buildCardOption('PayPal2', 'assets/images/Apple_Pay-Logo.wine.png'), // Another PayPal option
               ],
             ),
             Container(
@@ -201,7 +200,8 @@ class _PaymentState extends State<Payment> {
 
   // Widget to build each card option
   Widget _buildCardOption(String cardType, String imagePath) {
-    return Expanded(
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
       child: GestureDetector(
         onTap: () {
           setState(() {
@@ -226,7 +226,7 @@ class _PaymentState extends State<Payment> {
                 Image.asset(
                   imagePath,
                   height: 40,
-                  width: 45, 
+                  width: 60, 
                   fit: BoxFit.contain,// Customize image size
                 ),
                 Radio(

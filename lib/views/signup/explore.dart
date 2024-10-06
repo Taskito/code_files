@@ -174,7 +174,7 @@ class Explore extends StatelessWidget {
       width: double.infinity,
       child: ElevatedButton.icon(
         style: ElevatedButton.styleFrom(
-          backgroundColor: mainGrey,
+          backgroundColor: Colors.white,
           padding: EdgeInsets.symmetric(
             vertical: screenWidth * 0.04, // Responsive padding
           ),

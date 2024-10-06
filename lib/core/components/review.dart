@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:taskito/core/helpers/dimensions.dart';
 import 'package:taskito/core/style/app_colors.dart';
 
@@ -29,7 +30,7 @@ class Review extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       width: Dimensions.getWidth(width),
-      height: Dimensions.getHeight(0.15),
+      height: 100.h,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
