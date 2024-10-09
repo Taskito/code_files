@@ -3,8 +3,6 @@ import 'package:taskito/core/components/main_btn_style.dart';
 import 'package:taskito/core/helpers/dimensions.dart';
 import 'package:taskito/core/style/app_colors.dart';
 import 'package:taskito/views/layout/layout%20copy.dart';
-import 'package:taskito/views/layout/layout.dart';
-
 class WelcomeBack extends StatelessWidget {
   const WelcomeBack({super.key});
   @override

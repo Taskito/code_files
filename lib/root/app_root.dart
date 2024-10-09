@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:taskito/views/add_service.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:taskito/views/email_verification.dart';
 import 'package:taskito/views/about_us.dart';
@@ -86,8 +85,7 @@ class AppRoot extends StatelessWidget {
               "chat": (context) => Contact(),
               "seeAll": (context) => const SeeAllReviews(),
               "service_details": (context) => const ServiceDetails(),
-              "service_uploaded_successfully": (context) =>
-              const ServiceUploadedSuccessfully(),
+              "service_uploaded_successfully": (context) => const ServiceUploadedSuccessfully(),
               "about_us": (context) => const AboutUs(),
               "terms_conditions": (context) => const TermsConditions(),
               "privacy_policy": (context) => const PrivacyPolicy(),
@@ -97,7 +95,8 @@ class AppRoot extends StatelessWidget {
               "email_verification": (context) => const EmailVerification(),
               "successfull_uplaod": (context) => const SuccessfullUpload(),
               "welcome_back": (context) => const WelcomeBack(),
-              "add_service": (context) => const AddService()
+              "add_service": (context) => const AddService(),
+              "profile_details": (context) => const ProfileDetails()
             });
       },
     );
