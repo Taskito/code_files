@@ -20,7 +20,7 @@ class ChooseTrip extends StatelessWidget {
           children: [
             // Text at the top left with padding
             Padding(
-              padding: EdgeInsets.only(top: 250), // Space from the top
+              padding: const EdgeInsets.only(top: 250), // Space from the top
               child: Text(
                 'You are:',
                 style: TextStyle(
@@ -54,7 +54,7 @@ class ChooseTrip extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => MyLayout(ind: 0, page: 0),));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) =>  MyLayout(ind: 0, page: 0),));
                       },
                       child: Text(
                         'Buyer',
@@ -101,7 +101,7 @@ class ChooseTrip extends StatelessWidget {
               ],
             ),
 
-            Spacer(), // Push content upward, leaving space at the bottom
+            const Spacer(), // Push content upward, leaving space at the bottom
           ],
         ),
       ),

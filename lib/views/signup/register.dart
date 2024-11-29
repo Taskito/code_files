@@ -39,9 +39,9 @@ class _RegisterState extends State<Register> {
               bottom: 0,
               child: Container(
                 height: size.height * 0.75,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: signupcolor,
-                  borderRadius: const BorderRadius.only(
+                  borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(50),
                     topRight: Radius.circular(50),
                     bottomLeft: Radius.circular(50),
@@ -51,7 +51,7 @@ class _RegisterState extends State<Register> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 140), // Adjust top padding
+              padding: const EdgeInsets.only(top: 140), // Adjust top padding
               child: Center(
                 child: Padding(
                   padding: EdgeInsets.symmetric(
@@ -76,7 +76,7 @@ class _RegisterState extends State<Register> {
                             height: 20), // Space between logo and text
 
                         // "Create an account" text
-                        Text(
+                        const Text(
                           'Create an Account',
                           style: TextStyle(
                             color: mainPurple, // Your primary color
@@ -163,7 +163,7 @@ class _RegisterState extends State<Register> {
                                 padding: const EdgeInsets.only(top: 8.0),
                                 child: Text(
                                   _passwordStrengthMessage!,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Colors.red,
                                     fontSize: 12,
                                     fontFamily: 'Poppins',
@@ -277,10 +277,10 @@ class _RegisterState extends State<Register> {
                             );
                           },
                           child: RichText(
-                            text: TextSpan(
+                            text: const TextSpan(
                               text:
                                   'By creating an account or signing in, you agree to our ',
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontSize: 12,
                                 fontFamily: 'Poppins',
                                 color: Colors.black,

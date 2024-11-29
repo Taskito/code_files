@@ -5,7 +5,7 @@ import 'package:taskito/core/style/app_colors.dart';
 
 class MessageTo extends StatelessWidget {
   final String message;
-  const MessageTo({
+  const MessageTo({super.key, 
     required this.message
   });
   @override

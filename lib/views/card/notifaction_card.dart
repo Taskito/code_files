@@ -10,7 +10,7 @@ class NotifactionCard extends StatelessWidget {
   final String message;
   final String time;
 
-  const NotifactionCard({
+  const NotifactionCard({super.key, 
   
     required this.name,
     required this.message,
@@ -20,8 +20,8 @@ class NotifactionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top :3),
-      padding: EdgeInsets.all(5),
+      margin: const EdgeInsets.only(top :3),
+      padding: const EdgeInsets.all(5),
       
       // shape: RoundedRectangleBorder(
             
@@ -33,20 +33,20 @@ class NotifactionCard extends StatelessWidget {
       //         ) // Set the border radius for rounded corners
       //       ),rgba(244, 240, 253, 1)
 
-      color: Color.fromARGB(255, 244, 240, 253),
+      color: const Color.fromARGB(255, 244, 240, 253),
       child: ListTile(
         isThreeLine: true,
         
-        title: Text(name, style: TextStyle(fontWeight: FontWeight.bold)),
+        title: Text(name, style: const TextStyle(fontWeight: FontWeight.bold)),
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
           Text(message),  
           Text(time),
-          Text("See Profile",style: TextStyle(color: Colors.blue),)
+          const Text("See Profile",style: TextStyle(color: Colors.blue),)
           ],
         ) ,
-        trailing: CircleAvatar(
+        trailing: const CircleAvatar(
           radius: 5,
           backgroundColor: mainPurple,
         ),

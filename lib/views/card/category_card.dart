@@ -7,7 +7,7 @@ class CategoryCard extends StatelessWidget {
   final String title;
   final String buttonText;
   final Widget goto;
-  const CategoryCard({
+  const CategoryCard({super.key, 
     required this.imagePath,
     required this.title,
     required this.buttonText,
@@ -35,23 +35,23 @@ class CategoryCard extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                   ),
-                  SizedBox(height: 5),
-                  Text(
+                  const SizedBox(height: 5),
+                  const Text(
                     "Explore a range of .",
                     style: TextStyle(color: Colors.grey, fontSize: 14),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
                       style: ButtonStyle(
-                        backgroundColor: WidgetStatePropertyAll(Colors.white),
-                        shape: MaterialStateProperty.all<OutlinedBorder>(
+                        backgroundColor: const WidgetStatePropertyAll(Colors.white),
+                        shape: WidgetStateProperty.all<OutlinedBorder>(
                           RoundedRectangleBorder(
                             // You can use any shape like RoundedRectangleBorder or CircleBorder
-                            side: BorderSide(
+                            side: const BorderSide(
                               color: Color.fromARGB(
                                   255, 116, 101, 230), // Border color
                               width: 1.0, // Border width

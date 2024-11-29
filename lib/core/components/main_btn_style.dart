@@ -11,13 +11,13 @@ class MainBtnStyle extends StatelessWidget {
   final double customBorderRadius;
   final double width; 
   const MainBtnStyle({
-    Key? key,
+    super.key,
     required this.text,
     required this.onPressed,
     this.color = mainPurple,
     this.customBorderRadius = 0,
     required this.width,
-  }): super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -11,14 +11,14 @@ class UploadPhoto extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        child: Container(
+        child: SizedBox(
           width: size.width * 0.85, // Responsive container width
           height: size.height * 0.75, // Responsive container height
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: 100), // Space from the top of the screen
+              const SizedBox(height: 100), // Space from the top of the screen
               // Stack to overlay upload icon on the circular container
               Stack(
                 alignment: Alignment
@@ -64,7 +64,7 @@ class UploadPhoto extends StatelessWidget {
                               color: Colors.grey.withOpacity(0.1),
                               spreadRadius: 3,
                               blurRadius: 8,
-                              offset: Offset(0, 0),
+                              offset: const Offset(0, 0),
                             ),
                           ],
                         ),

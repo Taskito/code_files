@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:taskito/views/card/card.dart';
 
@@ -52,9 +53,9 @@ import 'package:taskito/views/card/card.dart';
 // }
 class AllServies extends StatelessWidget {
 
-   final List<Map<String, dynamic>> products;
+   final List<QueryDocumentSnapshot> services;
 
-  const AllServies({required this.products});
+  const AllServies({super.key, required this.services});
 
   @override
   Widget build(BuildContext context) {
@@ -62,13 +63,14 @@ class AllServies extends StatelessWidget {
       padding: const EdgeInsets.all(12.0),
       child: (
         ListView.builder(
-          itemCount: products.length,
+          itemCount: services.length,
           itemBuilder: (context, index) {
             return(
               CardDesign(
-                description:products[index]["description"] ,
-                imagePath: products[index]["imagePath"],
-                title:  products[index]["title"],
+                description:services[index]["service_description"] ,
+                imagePath: "assets/images/bog.jpg",
+                title:  services[index]["service_name"],
+                service_id:services[index].id
                 )
             );
           

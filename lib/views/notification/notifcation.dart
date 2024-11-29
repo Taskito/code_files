@@ -7,6 +7,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,15 +18,17 @@ class MyApp extends StatelessWidget {
 }
 
 class NotificationScreen extends StatelessWidget {
+  const NotificationScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Notification'),
+        title: const Text('Notification'),
         backgroundColor: Colors.white,
         centerTitle: true,
-        actions: [
+        actions: const [
             CircleAvatar(
                         radius: 20,
                         
@@ -37,8 +41,8 @@ class NotificationScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            margin: EdgeInsets.all(10),
-            padding: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
                     height: 119,
                     width: double.infinity,
                     decoration: const BoxDecoration(
@@ -47,7 +51,7 @@ class NotificationScreen extends StatelessWidget {
                     color: Colors.grey,
                     spreadRadius: 2,
                     blurRadius: 5,
-                    offset: const Offset(0, 2), // changes position of shadow
+                    offset: Offset(0, 2), // changes position of shadow
                   ),
 
                       ],
@@ -58,14 +62,14 @@ class NotificationScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-          SizedBox(height: 40,),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
+          const SizedBox(height: 40,),
+          const Padding(
+            padding: EdgeInsets.all(10.0),
             child: Text("Notification",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 21),),
           ),
           Expanded(
             child: ListView(
-              children: [
+              children: const [
                 NotifactionCard(
                   name: 'John Doe',
                   message: 'Need help with your project? I\'m here!',

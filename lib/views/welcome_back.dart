@@ -31,7 +31,7 @@ class WelcomeBack extends StatelessWidget {
             customBorderRadius: 10,
             text: "Continue",
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => MySaller(ind: 0, page: 0),));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const MySaller(ind: 0, page: 0),));
             })
         ]),
             ),

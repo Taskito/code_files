@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:taskito/core/style/app_colors.dart';
@@ -6,15 +7,16 @@ import 'package:taskito/views/post/show_posts.dart';
 
 class CreatePost extends StatelessWidget {
   CreatePost({super.key});
-  var _formkey = GlobalKey<FormState>();
+  final _formkey = GlobalKey<FormState>();
   TextEditingController posttext = TextEditingController();
+  TextEditingController postfeild = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Create Post"),
+        title: const Text("Create Post"),
         centerTitle: true,
         backgroundColor: Colors.white,
       ),
@@ -24,17 +26,48 @@ class CreatePost extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 40),
-              Text(
+              const SizedBox(height: 40),
+              const Text(
                 "What's on your mind?",
                 style: TextStyle(fontSize: 30, color: Colors.black),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Form(
                 key: _formkey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    TextFormField(
+                      maxLines: 1,
+                      controller: postfeild,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "This field is required";
+                        }
+                        return null;
+                      },
+                      decoration: InputDecoration(
+                        hintText: "enter this post feild it or grafic",
+                        hintStyle: const TextStyle(color: textgrey),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide:
+                              const BorderSide(color: Colors.grey, width: 1.0),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide: const BorderSide(
+                              color: Color.fromARGB(255, 116, 101, 230),
+                              width: 1.0),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide:
+                              const BorderSide(color: Colors.grey, width: 1.0),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
                     TextFormField(
                       maxLines: 7,
                       controller: posttext,
@@ -46,31 +79,33 @@ class CreatePost extends StatelessWidget {
                       },
                       decoration: InputDecoration(
                         hintText: "Input Text...",
-                        hintStyle: TextStyle(color: textgrey),
+                        hintStyle: const TextStyle(color: textgrey),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5.0),
-                          borderSide: BorderSide(color: Colors.grey, width: 1.0),
+                          borderSide:
+                              const BorderSide(color: Colors.grey, width: 1.0),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5.0),
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                               color: Color.fromARGB(255, 116, 101, 230),
                               width: 1.0),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5.0),
-                          borderSide: BorderSide(color: Colors.grey, width: 1.0),
+                          borderSide:
+                              const BorderSide(color: Colors.grey, width: 1.0),
                         ),
                       ),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         TextButton.icon(
                           onPressed: () {},
-                          icon: Icon(CupertinoIcons.share, size: 16),
-                          label: Text(
+                          icon: const Icon(CupertinoIcons.share, size: 16),
+                          label: const Text(
                             "Upload Image",
                             style: TextStyle(color: Colors.white),
                           ),
@@ -83,12 +118,12 @@ class CreatePost extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                   ],
                 ),
               ),
               // Spacer to push the button to the bottom
-              SizedBox(height: 100), // Adjust height if needed
+              const SizedBox(height: 100), // Adjust height if needed
             ],
           ),
         ),
@@ -98,25 +133,40 @@ class CreatePost extends StatelessWidget {
         child: SizedBox(
           width: double.infinity,
           child: TextButton(
-            onPressed: () {
-              if (_formkey.currentState!.validate()) {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => MyLayout(ind: 0, page: 2)),
-                );
-              }
-            },
-            child: const Text(
-              "Make Post",
-              style: TextStyle(fontSize: 20),
-            ),
+            onPressed: () async {
+              // if (_formkey.currentState!.validate()) {
+              print(posttext.text);
+              var data = await FirebaseFirestore.instance
+                  .collection("posts")
+                  .add({
+                    "content": posttext.text,
+                    "postfeild": postfeild.text,
+                    "user_id": {"user_name": "nada", "type": "saller"},
+                    "created_at": Timestamp.now()
+                  })
+                  .then((value) => print("added"))
+                  .catchError((error) => print("error ${error}"));
+
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => MyLayout(ind: 0, page: 2)),
+              );
+            }
+            // },
+            ,
             style: TextButton.styleFrom(
               backgroundColor: mainPurple,
               foregroundColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30),
               ),
-              padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 10),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 100, vertical: 10),
+            ),
+            child: const Text(
+              "Make Post",
+              style: TextStyle(fontSize: 20),
             ),
           ),
         ),

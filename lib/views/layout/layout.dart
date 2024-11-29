@@ -10,47 +10,43 @@ import 'package:taskito/views/sallerList/saller_list.dart';
 import 'package:taskito/views/userProfile/profile.dart';
 
 class MyLayout extends StatefulWidget {
-    final int ind ;
-     final int page ;
-   const MyLayout(
-  { required this.ind,
-  required this.page}
-  );
+  final int ind;
+  final int page;
+  
+  MyLayout({
+    super.key, 
+    required this.ind,
+    required this.page
+  });
+  
   @override
   State<MyLayout> createState() => _MyLayoutState();
 }
 
 class _MyLayoutState extends State<MyLayout> {
-  late int selectedvalue;
   late List<Widget> _pages;
+  int selectedvalue = 0;  // Initialize here with a default value
 
   @override
   void initState() {
     super.initState();
-    // Initialize _selectedIndex based on widget.ind
+
+    // Initialize selectedvalue based on widget.page
     selectedvalue = widget.page;
-       _pages = [
-    MyHomeScreen(),
-    ServiesLayout(ind: widget.ind ),
-  ShowPosts(),
-    ProfileDetails(),
-    Profile(),
-    
 
-    // MyFavouritelist(),
-    // MyProfileScreen()
-  ];
-    
+    // Initialize the pages for bottom navigation
+    _pages = [
+       MyHomeScreen(),
+      ServiesLayout(ind: widget.ind),
+      const ShowPosts(posttype: "all",),
+      Profile(),
+    ];
   }
-  //  int selectedvalue = 0;
-
 
   @override
   Widget build(BuildContext context) {
-    return (
-        Scaffold(
-         backgroundColor: Colors.white,
-      // appBar: AppBar(),
+    return Scaffold(
+      backgroundColor: Colors.white,
       body: _pages.elementAt(selectedvalue),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.transparent,
@@ -62,25 +58,19 @@ class _MyLayoutState extends State<MyLayout> {
           BottomNavigationBarItem(
               icon: Icon(Icons.article_outlined), label: "Posts"),
           BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.person), label: "Profile"),  
-          BottomNavigationBarItem(
-              icon: Icon(Icons.settings_outlined), label: "Settings"),  
+              icon: Icon(CupertinoIcons.person), label: "Profile"),
         ],
         onTap: (value) {
           setState(() {
             selectedvalue = value;
-            // print(value);
           });
-          // Navigator.pushReplacement(context,
-          //     MaterialPageRoute(builder: (context) => _pages[value]));
         },
         currentIndex: selectedvalue,
-        selectedItemColor: Color.fromARGB(255, 116, 101, 230),
+        selectedItemColor: const Color.fromARGB(255, 116, 101, 230),
         unselectedItemColor: Colors.grey,
         selectedFontSize: 12,
         unselectedFontSize: 10,
       ),
-    )
     );
   }
 }

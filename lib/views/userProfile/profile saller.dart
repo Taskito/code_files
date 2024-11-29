@@ -8,13 +8,15 @@ import 'package:taskito/views/profile/account_settings.dart';
 import 'package:taskito/views/profile/profile_details.dart';
 
 class ProfileSaller extends StatelessWidget {
+  const ProfileSaller({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         toolbarHeight: 20,
-        leading: Text(" "),
+        leading: const Text(" "),
       ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -23,7 +25,7 @@ class ProfileSaller extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              color: Color.fromRGBO(116, 101, 239, 0.06),
+              color: const Color.fromRGBO(116, 101, 239, 0.06),
               child: Column(
                 children: [
                   Row(
@@ -31,12 +33,12 @@ class ProfileSaller extends StatelessWidget {
                     children: [
                       IconButton(
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => AccountSettings(),));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const AccountSettings(),));
                           },
-                          icon: Icon(Icons.mode_edit_outline_outlined))
+                          icon: const Icon(Icons.mode_edit_outline_outlined))
                     ],
                   ),
-                  Column(
+                  const Column(
                     children: [
                       CircleAvatar(
                         radius: 50,
@@ -69,8 +71,8 @@ class ProfileSaller extends StatelessWidget {
                     ),
                     color: Colors.white,
                     child: Container(
-                      decoration: BoxDecoration(),
-                      padding: EdgeInsets.all(7),
+                      decoration: const BoxDecoration(),
+                      padding: const EdgeInsets.all(7),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -83,16 +85,16 @@ class ProfileSaller extends StatelessWidget {
                                   color: Color.fromRGBO(116, 101, 230, 1),
                                   size: 30,
                                 ),
-                                color: Color.fromRGBO(228, 217, 252, 1),
+                                color: const Color.fromRGBO(228, 217, 252, 1),
                                 style: IconButton.styleFrom(
-                                  backgroundColor: Color.fromRGBO(
+                                  backgroundColor: const Color.fromRGBO(
                                       228, 217, 252, 1), // Background color
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
-                              Text(
+                              const Text(
                                 'Notifications',
                                 style: TextStyle(fontSize: 16),
                               ),
@@ -102,7 +104,7 @@ class ProfileSaller extends StatelessWidget {
                               onPressed: () {
                                 Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationScreen(),));
                               },
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.arrow_forward_ios_outlined,
                                 color: Colors.grey,
                               ))
@@ -123,8 +125,8 @@ class ProfileSaller extends StatelessWidget {
                       ),
                       color: Colors.white,
                       child: Container(
-                        decoration: BoxDecoration(),
-                        padding: EdgeInsets.all(7),
+                        decoration: const BoxDecoration(),
+                        padding: const EdgeInsets.all(7),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -137,16 +139,16 @@ class ProfileSaller extends StatelessWidget {
                                     color: Color.fromRGBO(116, 101, 230, 1),
                                     size: 30,
                                   ),
-                                  color: Color.fromRGBO(228, 217, 252, 1),
+                                  color: const Color.fromRGBO(228, 217, 252, 1),
                                   style: IconButton.styleFrom(
-                                    backgroundColor: Color.fromRGBO(
+                                    backgroundColor: const Color.fromRGBO(
                                         228, 217, 252, 1), // Background color
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10,
                                 ),
-                                Text(
+                                const Text(
                                   'All deals',
                                   style: TextStyle(fontSize: 16),
                                 ),
@@ -156,7 +158,7 @@ class ProfileSaller extends StatelessWidget {
                                 onPressed: () {
                                   Navigator.push(context, MaterialPageRoute(builder: (context) => AllDealing(),));
                                 },
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.arrow_forward_ios_outlined,
                                   color: Colors.grey,
                                 ))
@@ -173,8 +175,8 @@ class ProfileSaller extends StatelessWidget {
                     ),
                     color: Colors.white,
                     child: Container(
-                      decoration: BoxDecoration(),
-                      padding: EdgeInsets.all(7),
+                      decoration: const BoxDecoration(),
+                      padding: const EdgeInsets.all(7),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -187,16 +189,16 @@ class ProfileSaller extends StatelessWidget {
                                   color: Color.fromRGBO(116, 101, 230, 1),
                                   size: 30,
                                 ),
-                                color: Color.fromRGBO(228, 217, 252, 1),
+                                color: const Color.fromRGBO(228, 217, 252, 1),
                                 style: IconButton.styleFrom(
-                                  backgroundColor: Color.fromRGBO(
+                                  backgroundColor: const Color.fromRGBO(
                                       228, 217, 252, 1), // Background color
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
-                              Text(
+                              const Text(
                                 'Settings',
                                 style: TextStyle(fontSize: 16),
                               ),
@@ -204,9 +206,9 @@ class ProfileSaller extends StatelessWidget {
                           ),
                           IconButton(
                               onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder:(context)=>AccountSettings() ));
+                                Navigator.push(context, MaterialPageRoute(builder:(context)=>const AccountSettings() ));
                               },
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.arrow_forward_ios_outlined,
                                 color: Colors.grey,
                               ))
@@ -217,7 +219,7 @@ class ProfileSaller extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: (){
-                         Navigator.push(context, MaterialPageRoute(builder: (context) => Launguage(),));
+                         Navigator.push(context, MaterialPageRoute(builder: (context) => const Launguage(),));
                     },
                     child: Card(
                       shape: RoundedRectangleBorder(
@@ -226,27 +228,27 @@ class ProfileSaller extends StatelessWidget {
                       ),
                       color: Colors.white,
                       child: Container(
-                        decoration: BoxDecoration(),
-                        padding: EdgeInsets.all(7),
+                        decoration: const BoxDecoration(),
+                        padding: const EdgeInsets.all(7),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Row(
                               children: [
                                  Container(
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     color: Color.fromRGBO(228, 217, 252, 1), // Background color
                                     shape: BoxShape
                                         .circle, // Makes the container circular
                                   ),
-                                  padding: EdgeInsets.all(
+                                  padding: const EdgeInsets.all(
                                       9), // Padding around the icon
                                   child:Image.asset("assets/images/translate.png",scale: 19,)
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10,
                                 ),
-                                Text(
+                                const Text(
                                   'languages',
                                   style: TextStyle(fontSize: 16),
                                 ),
@@ -254,9 +256,9 @@ class ProfileSaller extends StatelessWidget {
                             ),
                             IconButton(
                                 onPressed: () {
-                                     Navigator.push(context, MaterialPageRoute(builder: (context) => Launguage(),));
+                                     Navigator.push(context, MaterialPageRoute(builder: (context) => const Launguage(),));
                                 },
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.arrow_forward_ios_outlined,
                                   color: Colors.grey,
                                 ))
@@ -268,7 +270,7 @@ class ProfileSaller extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                       Navigator.push(context, MaterialPageRoute(builder: (context) => Payment(),));
+                       Navigator.push(context, MaterialPageRoute(builder: (context) => const Payment(),));
                     },
                     child: Card(
                       shape: RoundedRectangleBorder(
@@ -277,27 +279,27 @@ class ProfileSaller extends StatelessWidget {
                       ),
                       color: Colors.white,
                       child: Container(
-                        decoration: BoxDecoration(),
-                        padding: EdgeInsets.all(7),
+                        decoration: const BoxDecoration(),
+                        padding: const EdgeInsets.all(7),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Row(
                               children: [
                                 Container(
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     color: Color.fromRGBO(228, 217, 252, 1), // Background color
                                     shape: BoxShape
                                         .circle, // Makes the container circular
                                   ),
-                                  padding: EdgeInsets.all(
+                                  padding: const EdgeInsets.all(
                                       9), // Padding around the icon
                                   child:Image.asset("assets/images/credit-card.png",scale: 19,)
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10,
                                 ),
-                                Text(
+                                const Text(
                                   'Payment',
                                   style: TextStyle(fontSize: 16),
                                 ),
@@ -305,9 +307,9 @@ class ProfileSaller extends StatelessWidget {
                             ),
                             IconButton(
                                 onPressed: () {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => Payment(),));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Payment(),));
                                 },
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.arrow_forward_ios_outlined,
                                   color: Colors.grey,
                                 ))
@@ -319,7 +321,7 @@ class ProfileSaller extends StatelessWidget {
                   ),
                     InkWell(
                     onTap: () {
-                       Navigator.push(context, MaterialPageRoute(builder: (context) => Payment(),));
+                       Navigator.push(context, MaterialPageRoute(builder: (context) => const Payment(),));
                     },
                     child: Card(
                       shape: RoundedRectangleBorder(
@@ -328,27 +330,27 @@ class ProfileSaller extends StatelessWidget {
                       ),
                       color: Colors.white,
                       child: Container(
-                        decoration: BoxDecoration(),
-                        padding: EdgeInsets.all(7),
+                        decoration: const BoxDecoration(),
+                        padding: const EdgeInsets.all(7),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Row(
                               children: [
                                 Container(
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     color: Color.fromRGBO(228, 217, 252, 1), // Background color
                                     shape: BoxShape
                                         .circle, // Makes the container circular
                                   ),
-                                  padding: EdgeInsets.all(
+                                  padding: const EdgeInsets.all(
                                       9), // Padding around the icon
                                   child:Image.asset("assets/images/credit-card.png",scale: 19,)
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10,
                                 ),
-                                Text(
+                                const Text(
                                   'See Acount',
                                   style: TextStyle(fontSize: 16),
                                 ),
@@ -356,11 +358,11 @@ class ProfileSaller extends StatelessWidget {
                             ),
                             IconButton(
                                 onPressed: () {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileDetails(
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileDetails(
                                     
                                   )));
                                 },
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.arrow_forward_ios_outlined,
                                   color: Colors.grey,
                                 ))
@@ -378,13 +380,13 @@ class ProfileSaller extends StatelessWidget {
               onPressed: () {
                 // Add logout functionality here
               },
-              child: Text('Log out'),
+              child: const Text('Log out'),
             ),
             TextButton(
               onPressed: () {
                 // Add delete account functionality here
               },
-              child: Text(
+              child: const Text(
                 'Delete account',
                 style: TextStyle(color: Colors.red),
               ),

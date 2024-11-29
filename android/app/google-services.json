@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "172210648147",
+    "project_id": "taskito-8f190",
+    "storage_bucket": "taskito-8f190.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172210648147:android:24300f5ffc6483a75242a6",
+        "android_client_info": {
+          "package_name": "com.example.code_files"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxlExL-yFDa6gvU3yB6UB_kDrgs9AUTQY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172210648147:android:c53db1143475f5ae5242a6",
+        "android_client_info": {
+          "package_name": "com.example.taskito"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxlExL-yFDa6gvU3yB6UB_kDrgs9AUTQY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

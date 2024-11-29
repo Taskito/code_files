@@ -54,7 +54,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // }
 
 class AppRoot extends StatelessWidget {
-  const AppRoot({Key? key}) : super(key: key);
+  const AppRoot({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +80,7 @@ class AppRoot extends StatelessWidget {
                     // displayColor: Colors.black,
                 ),
             ),
-            home: const Splash(),
+            home: MyLayout(ind: 0, page: 0),
             routes: {
               "chat": (context) => Contact(),
               "seeAll": (context) => const SeeAllReviews(),

@@ -77,7 +77,7 @@ class ServiceUploadedSuccessfully extends StatelessWidget {
                                 ),
                               child: const Text("Success", style: TextStyle(color: Color.fromARGB(255, 60, 143, 63)),),
                             ),
-                        Text("595 EGP", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 46, 105, 48)),)
+                        const Text("595 EGP", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 46, 105, 48)),)
                           ],
                         )
                       ],

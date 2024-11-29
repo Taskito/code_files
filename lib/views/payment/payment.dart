@@ -23,7 +23,7 @@ class _PaymentState extends State<Payment> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Payment"),
+        title: const Text("Payment"),
         centerTitle: true,
         backgroundColor: Colors.white,
       ),
@@ -33,8 +33,8 @@ class _PaymentState extends State<Payment> {
           child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Text(
                 'Select Card',
                 style: TextStyle(
@@ -52,30 +52,30 @@ class _PaymentState extends State<Payment> {
               ],
             ),
             Container(
-              margin: EdgeInsets.only(top: 20),
+              margin: const EdgeInsets.only(top: 20),
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                                 // Card Holder
-                  Text(
+                  const Text(
                     "Card holder",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   MainTxtField(hintText: "your card name", controller: cardname,borderRadius: 10,),
                  
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                       
                   // Card Number
-                  Text(
+                  const Text(
                     "Card number",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 10),
-                   MainTxtField(hintText: "XXXX XXXX XXXX XXXX", controller: cardnumber,borderRadius: 10,fieldIcon:  Icon(Icons.credit_card),),
+                  const SizedBox(height: 10),
+                   MainTxtField(hintText: "XXXX XXXX XXXX XXXX", controller: cardnumber,borderRadius: 10,fieldIcon:  const Icon(Icons.credit_card),),
                 
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                       
                   // Valid until and Security code
                   Row(
@@ -84,26 +84,26 @@ class _PaymentState extends State<Payment> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
+                            const Text(
                               "Valid until",
                               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                             ),
-                            SizedBox(height: 10),
+                            const SizedBox(height: 10),
                               MainTxtField(hintText: "MM/YYYY", controller: cardvailduntill,borderRadius: 10,),
                           
                           ],
                         ),
                       ),
-                      SizedBox(width: 16),
+                      const SizedBox(width: 16),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
+                            const Text(
                               "Security code",
                               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                             ),
-                            SizedBox(height: 10),
+                            const SizedBox(height: 10),
                             MainTxtField(hintText: "***", controller: securitycode,borderRadius: 10,),
                           
                           ],
@@ -111,7 +111,7 @@ class _PaymentState extends State<Payment> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                       
                   // Accept terms and conditions
                   Row(
@@ -126,7 +126,7 @@ class _PaymentState extends State<Payment> {
                         },
                       ),
                       RichText(
-                        text: TextSpan(
+                        text: const TextSpan(
                           text: 'Accept the ',
                           style: TextStyle(color: Colors.black),
                           children: [
@@ -155,10 +155,10 @@ class _PaymentState extends State<Payment> {
                           });
                         },
                       ),
-                      Text("Use as default payment method"),
+                      const Text("Use as default payment method"),
                     ],
                   ),
-                 SizedBox(height: 40,),
+                 const SizedBox(height: 40,),
                  SizedBox(
           width: double.infinity,
           child: TextButton(
@@ -170,10 +170,6 @@ class _PaymentState extends State<Payment> {
               //   );
               // }
             },
-            child: const Text(
-              "Add Card",
-              style: TextStyle(fontSize: 20),
-            ),
             style: TextButton.styleFrom(
               backgroundColor: mainPurple,
               foregroundColor: Colors.white,
@@ -181,6 +177,10 @@ class _PaymentState extends State<Payment> {
                 borderRadius: BorderRadius.circular(10),
               ),
               padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 10),
+            ),
+            child: const Text(
+              "Add Card",
+              style: TextStyle(fontSize: 20),
             ),
           ),
         ),

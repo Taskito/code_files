@@ -14,7 +14,7 @@ class MySaller extends StatefulWidget {
     final int ind ;
      final int page ;
    const MySaller(
-  { required this.ind,
+  {super.key,  required this.ind,
   required this.page}
   );
   @override
@@ -31,10 +31,10 @@ class _MyLayoutState extends State<MySaller> {
     // Initialize _selectedIndex based on widget.ind
     selectedvalue = widget.page;
        _pages = [
-    MyHomeScreen(),
+    const MyHomeScreen(),
     ServiesLayout(ind: widget.ind ),
-  ShowPosts(),
-  ProfileDetails(),
+  const ShowPosts(posttype: "all",),
+  const ProfileDetails(),
     ProfileSaller()
 
     // MyFavouritelist(),
@@ -77,7 +77,7 @@ class _MyLayoutState extends State<MySaller> {
           //     MaterialPageRoute(builder: (context) => _pages[value]));
         },
         currentIndex: selectedvalue,
-        selectedItemColor: Color.fromARGB(255, 116, 101, 230),
+        selectedItemColor: const Color.fromARGB(255, 116, 101, 230),
         unselectedItemColor: Colors.grey,
         selectedFontSize: 12,
         unselectedFontSize: 10,

@@ -30,13 +30,13 @@ class _LaunguageState extends State<Launguage> {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_ios_new,
               color: mainPurple,
             ),
             style: IconButton.styleFrom(
                 backgroundColor: Colors.transparent,
-                side: BorderSide(color: Colors.grey, width: 1)),
+                side: const BorderSide(color: Colors.grey, width: 1)),
           ),
         ),
         body: Padding(
@@ -44,8 +44,8 @@ class _LaunguageState extends State<Launguage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(
+              const Padding(
+                padding: EdgeInsets.only(
                     left: 8.0, right: 8, top: 5, bottom: 4),
                 child: Text(
                   "Choose the language",
@@ -55,16 +55,16 @@ class _LaunguageState extends State<Launguage> {
                       color: mainPurple),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.only(
+              const Padding(
+                padding: EdgeInsets.only(
                     left: 8.0, right: 8, top: 0, bottom: 4),
                 child: Text(
                     "Don’t worry! It happens. Please enter the email associated with your account."),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Padding(
@@ -74,27 +74,27 @@ class _LaunguageState extends State<Launguage> {
                   child: TextField(
                     decoration: InputDecoration(
                       hintText: 'Search for services',
-                      hintStyle: TextStyle(fontSize: 14, color: Colors.grey),
-                      prefixIcon: Icon(Icons.search, color: Colors.grey),
+                      hintStyle: const TextStyle(fontSize: 14, color: Colors.grey),
+                      prefixIcon: const Icon(Icons.search, color: Colors.grey),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30.0),
-                        borderSide: BorderSide(color: Colors.grey, width: 1.0),
+                        borderSide: const BorderSide(color: Colors.grey, width: 1.0),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30.0),
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                             color: Color.fromARGB(255, 116, 101, 230),
                             width: 1.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30.0),
-                        borderSide: BorderSide(color: Colors.grey, width: 1.0),
+                        borderSide: const BorderSide(color: Colors.grey, width: 1.0),
                       ),
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 10,),
+              const SizedBox(height: 10,),
               Expanded(
                 child: ListView.builder(
                   itemCount: languages.length,
@@ -106,8 +106,8 @@ class _LaunguageState extends State<Launguage> {
                         });
                       },
                       child: Container(
-                        margin: EdgeInsets.all(10),
-                        padding: EdgeInsets.all(16.0),
+                        margin: const EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(16.0),
                         decoration: BoxDecoration(
                           // border: Border.all(
                           //   color: selectedLanguage == languages[index]['name']
@@ -115,7 +115,7 @@ class _LaunguageState extends State<Launguage> {
                           //       : Colors.grey,
                           // ),
                           borderRadius: BorderRadius.circular(selectedLanguage == languages[index]['name']?30:0),
-                          color: selectedLanguage == languages[index]['name']?Color.fromRGBO(231, 231, 233, 1):Colors.white,
+                          color: selectedLanguage == languages[index]['name']?const Color.fromRGBO(231, 231, 233, 1):Colors.white,
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -124,18 +124,18 @@ class _LaunguageState extends State<Launguage> {
                               children: [
                                 Text(
                                   languages[index]['flag']!,
-                                  style: TextStyle(fontSize: 24),
+                                  style: const TextStyle(fontSize: 24),
                                 ),
-                                SizedBox(width: 16),
+                                const SizedBox(width: 16),
                                 Text(
                                   languages[index]['name']!,
-                                  style: TextStyle(fontSize: 18),
+                                  style: const TextStyle(fontSize: 18),
                                 ),
                               ],
                             ),
                             selectedLanguage == languages[index]['name']?
 
-                            Icon(Icons.check_circle,color: Colors.white,):Text("")
+                            const Icon(Icons.check_circle,color: Colors.white,):const Text("")
                           ],
                         ),
                       ),

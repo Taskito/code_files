@@ -3,7 +3,7 @@ import 'package:taskito/core/helpers/dimensions.dart';
 import 'package:taskito/core/style/app_colors.dart';
 
 class CustomTabBar extends StatefulWidget {
-  CustomTabBar({super.key});
+  const CustomTabBar({super.key});
 
   @override
   State<CustomTabBar> createState() => _CustomTabBarState();
@@ -140,7 +140,7 @@ class _CustomTabBarState extends State<CustomTabBar> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
             Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               margin: EdgeInsets.symmetric(vertical: Dimensions.getHeight(0.02)),
               height: Dimensions.getHeight(0.05),
               width: Dimensions.getWidth(0.8),
@@ -157,7 +157,7 @@ class _CustomTabBarState extends State<CustomTabBar> {
                 ]),
               
             ),
-            Icon(Icons.send, color: mainPurple, size: 20,)
+            const Icon(Icons.send, color: mainPurple, size: 20,)
           ],
           ),
         )

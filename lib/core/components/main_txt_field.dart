@@ -11,14 +11,14 @@ class MainTxtField extends StatelessWidget {
   final Callback? onChange;
 
   const MainTxtField({
-    Key? key,
+    super.key,
     this.borderRadius = 20,
     required this.hintText,
     required this.controller,
     this.fieldIcon,
     this.validator,
     this.onChange,
-  }) : super(key: key); 
+  }); 
 
   @override
   Widget build(BuildContext context) {

@@ -41,7 +41,7 @@ class AllDealing extends StatelessWidget {
       Scaffold(
         backgroundColor: Colors.white,
         appBar:AppBar(
-        title: Text("All Dealing"),
+        title: const Text("All Dealing"),
         centerTitle: true,
         backgroundColor: Colors.white,
         ),
@@ -50,8 +50,8 @@ class AllDealing extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Last Deals",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400),textAlign: TextAlign.start,),
-              SizedBox(
+              const Text("Last Deals",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400),textAlign: TextAlign.start,),
+              const SizedBox(
                 height: 20,
               ),
               Expanded(

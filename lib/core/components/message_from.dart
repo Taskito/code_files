@@ -5,7 +5,7 @@ import 'package:taskito/core/style/app_colors.dart';
 
 class MessageFrom extends StatelessWidget {
   final String message;
-  const MessageFrom({required this.message});
+  const MessageFrom({super.key, required this.message});
   @override
   Widget build(BuildContext context) {
     Dimensions.setDimensions(context);

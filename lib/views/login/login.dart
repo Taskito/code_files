@@ -53,10 +53,10 @@ class _LoginState extends State<Login> {
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(25),
                   borderSide:
-                      BorderSide(color: mainPurple), // Focused border color
+                      const BorderSide(color: mainPurple), // Focused border color
                 ),
                 labelStyle:
-                    TextStyle(color: mainPurple), // Label color when focused
+                    const TextStyle(color: mainPurple), // Label color when focused
                 contentPadding:
                     const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               ),
@@ -78,10 +78,10 @@ class _LoginState extends State<Login> {
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(25),
                   borderSide:
-                      BorderSide(color: mainPurple), // Focused border color
+                      const BorderSide(color: mainPurple), // Focused border color
                 ),
                 labelStyle:
-                    TextStyle(color: mainPurple), // Label color when focused
+                    const TextStyle(color: mainPurple), // Label color when focused
                 contentPadding:
                     const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                 suffixIcon: IconButton(
@@ -167,7 +167,7 @@ class _LoginState extends State<Login> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Expanded(child: Divider(color: Colors.black)),
+                  const Expanded(child: Divider(color: Colors.black)),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Text(
@@ -178,7 +178,7 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                   ),
-                  Expanded(child: Divider(color: Colors.black)),
+                  const Expanded(child: Divider(color: Colors.black)),
                 ],
               ),
             ),
@@ -206,7 +206,7 @@ class _LoginState extends State<Login> {
               alignment: Alignment.bottomCenter,
               child: Padding(
                 padding:
-                    EdgeInsets.only(bottom: 20), // Ensure it's at the bottom
+                    const EdgeInsets.only(bottom: 20), // Ensure it's at the bottom
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(

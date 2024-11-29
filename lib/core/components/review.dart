@@ -11,7 +11,7 @@ class Review extends StatelessWidget {
   final double ratingStars;
   final double width;
   final String username;
-  const Review({
+  const Review({super.key, 
     required this.imagePath,
     required this.reviewMessage,
     required this.postedAt,
@@ -56,10 +56,10 @@ class Review extends StatelessWidget {
                       children: [
                         Text(
                           username,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 20),
                         ),
-                        Text(
+                        const Text(
                           "A day ago",
                           style: TextStyle(
                               fontSize: 15,
@@ -82,7 +82,7 @@ class Review extends StatelessWidget {
           const SizedBox(height: 5),
           Text(
             reviewMessage,
-            style: TextStyle(fontSize: 17, color: Color.fromARGB(160, 0, 0, 0)),
+            style: const TextStyle(fontSize: 17, color: Color.fromARGB(160, 0, 0, 0)),
           ),
         ],
       ),

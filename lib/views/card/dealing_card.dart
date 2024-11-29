@@ -9,7 +9,7 @@ class DealingCard extends StatelessWidget {
   final int price;
   final String servies_type;
   final String state;
-   DealingCard({
+   const DealingCard({super.key, 
       required this.saller_name,
       required this.saller_rating,
     required this.qun,
@@ -28,14 +28,14 @@ class DealingCard extends StatelessWidget {
             
               borderRadius: BorderRadius.circular(
                   4.0),
-              side: BorderSide(
+              side: const BorderSide(
                 color:Color.fromRGBO(235, 235, 235, 1),
                 width: 1
               ) // Set the border radius for rounded corners
             ),
             color: Colors.white,
-            margin: EdgeInsets.all(5),
-          child: Padding(padding: EdgeInsets.all(8),
+            margin: const EdgeInsets.all(5),
+          child: Padding(padding: const EdgeInsets.all(8),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -44,15 +44,15 @@ class DealingCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Last Deal",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
-                  SizedBox(height: 5,),
-                  Text("order :${servies_type}",style: TextStyle(color: textgrey,fontSize: 12),),
-                  SizedBox(height: 5,),
-                  Text("Qty: ${qun}, Price: \$ ${price}, Status: ${state}",style: TextStyle(color: textgrey,fontSize: 12),),
-                  SizedBox(height: 5,),
-                  Text("by :${saller_name}",style: TextStyle(color: textgrey,fontSize: 12),),
-                  SizedBox(height: 5,), 
-                  Text("Review",style: TextStyle(color: Colors.blue))
+                  const Text("Last Deal",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),),
+                  const SizedBox(height: 5,),
+                  Text("order :$servies_type",style: const TextStyle(color: textgrey,fontSize: 12),),
+                  const SizedBox(height: 5,),
+                  Text("Qty: $qun, Price: \$ $price, Status: $state",style: const TextStyle(color: textgrey,fontSize: 12),),
+                  const SizedBox(height: 5,),
+                  Text("by :$saller_name",style: const TextStyle(color: textgrey,fontSize: 12),),
+                  const SizedBox(height: 5,), 
+                  const Text("Review",style: TextStyle(color: Colors.blue))
                   // TextButton(onPressed: (){}, child: Text("Review",style: TextStyle(color: Colors.blue),),style: TextButton.styleFrom(padding: EdgeInsets.all(value)),),
                 ],
               )

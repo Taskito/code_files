@@ -98,6 +98,7 @@ class _AddServiceState extends State<AddService> {
                         if (value == null || value.length < 5) {
                           return context.tr("invalid_job_title");
                         }
+                        return null;
                       },
                     ),
                     SizedBox(
@@ -116,6 +117,7 @@ class _AddServiceState extends State<AddService> {
                         if (value == null || value.isEmpty) {
                           return context.tr("invalid_price");
                         }
+                        return null;
                       },
                       onChange: (value) {
                         setState(() {
@@ -126,6 +128,7 @@ class _AddServiceState extends State<AddService> {
                               price = double.parse(inputTextPrice!);
                           }
                         });
+                        return null;
                       },
                     ),
                     if(price != null)
